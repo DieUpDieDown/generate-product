@@ -1,0 +1,113 @@
+$version=Staged
+$ElectronicsColorVariantProductType=@ELECTRONICS_COLOR_VARIANT_PRODUCT_TYPE@
+$super_categories=@SUPER_CATEGORIES@
+$saleStatus=@SALE_STATUS@
+$variantType=@VARIANT_TYPE@
+$productType=@PRODUCT_TYPE@
+
+$variantNumber=@VARIANT_NUMBER@
+$imageDetailNumber=@IMAGE_DETAIL_NUMBER@
+
+
+####################################################################################
+## Date create: @DATE_NOW@
+####################################################################################
+
+# Macros / Replacement Parameter definitions
+$productCatalog=msscnProductCatalog
+$productCatalogName=Microsoft Product Catalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='$version'])[unique=true,default=$productCatalog:$version]
+$supercategories=supercategories(code, $catalogVersion)
+$baseProduct=baseProduct(code,$catalogVersion)
+$approved=approvalstatus(code)[default='approved']
+$offlineDate = 31.12.9999 23:59
+$onlineDate = 04.11.2013 23:59
+$lang=zh
+
+# Import config properties into impex macros
+UPDATE GenericItem[processor=de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor];pk[unique=true];;
+
+# Load the storefront context root config param
+$P_THEME_RESOURCE_PATH=$config-impex.static.image.path
+
+$media=@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
+$thumbnail=thumbnail(code, $catalogVersion)
+$picture=picture(code, $catalogVersion)
+$thumbnails=thumbnails(code, $catalogVersion)
+$detail=detail(code, $catalogVersion)
+$normal=normal(code, $catalogVersion)
+$others=others(code, $catalogVersion)
+$data_sheet=data_sheet(code, $catalogVersion)
+$medias=medias(code, $catalogVersion)
+$galleryImages=galleryImages(qualifier, $catalogVersion)
+$siteResource=jar:com.microsoft.store.cn.initialdata.setup.InitialDataSystemSetup&/msscninitialdata/import/productCatalogs/$productCatalog
+$productCatalog=msscnProductCatalog
+$productCatalogName=Microsoft Product Catalog
+
+$prices=Europe1prices[translator=de.hybris.platform.europe1.jalo.impex.Europe1PricesTranslator]
+$taxGroup=
+
+# Set product approval status to Approved only for those products that have prices.
+$approved=approvalstatus(code)[default='approved']
+$wasPrice=@wasPrice[translator=com.microsoft.store.cn.core.impex.translator.ProductWasPriceTranslator]
+
+$vendor=default
+$colorSwatch=colorSwatch(code, $catalogVersion)
+
+
+$baseProductCode=@BASE_PRODUCT_CODE@
+$baseProductName=@BASE_PRODUCT_NAME@
+@VARIANT1:START@
+
+$variant1Code=@VARIANT_1_CODE@
+$variant1Name=@VARIANT_1_NAME@@VARIANT1:END@@VARIANT2:START@
+
+$variant2Code=@VARIANT_2_CODE@
+$variant2Name=@VARIANT_2_NAME@@VARIANT2:END@@VARIANT3:START@
+
+$variant3Code=@VARIANT_3_CODE@
+$variant3Name=@VARIANT_3_NAME@@VARIANT3:END@@VARIANT4:START@
+
+$variant4Code=@VARIANT_4_CODE@
+$variant4Name=@VARIANT_4_NAME@@VARIANT4:END@@VARIANT5:START@
+
+$variant5Code=@VARIANT_5_CODE@
+$variant5Name=@VARIANT_5_NAME@@VARIANT5:END@@VARIANT6:START@
+
+$variant6Code=@VARIANT_6_CODE@
+$variant6Name=@VARIANT_6_NAME@@VARIANT6:END@@VARIANT7:START@
+
+$variant7Code=@VARIANT_7_CODE@
+$variant7Name=@VARIANT_7_NAME@@VARIANT7:END@@VARIANT8:START@
+
+$variant8Code=@VARIANT_8_CODE@
+$variant8Name=@VARIANT_8_NAME@@VARIANT8:END@
+
+##############################################################################################
+#################################    VARIANT-END       #######################################
+##############################################################################################
+
+##############################################################################################
+########################### @BASE_PRODUCT_CODE@		@VARIANT1:START@
+###########################		@VARIANT_1_CODE@	@VARIANT1:END@@VARIANT2:START@
+###########################		@VARIANT_2_CODE@	@VARIANT2:END@@VARIANT3:START@
+###########################		@VARIANT_3_CODE@	@VARIANT3:END@@VARIANT4:START@
+###########################		@VARIANT_4_CODE@	@VARIANT4:END@@VARIANT5:START@
+###########################		@VARIANT_5_CODE@	@VARIANT5:END@@VARIANT6:START@
+###########################		@VARIANT_6_CODE@	@VARIANT6:END@@VARIANT7:START@
+###########################		@VARIANT_7_CODE@	@VARIANT7:END@@VARIANT8:START@
+###########################		@VARIANT_8_CODE@	@VARIANT8:END@
+##############################################################################################
+
+INSERT_UPDATE Product	;code[unique=true]				;$supercategories		;manufacturerName	;manufacturerAID	;unit(code)		;ean			;variantType(code)				;type(code)		;$catalogVersion	;$approved	;offlineDate[dateformat=dd.MM.yyyy HH:mm]	;onlineDate[dateformat=dd.MM.yyyy HH:mm];keepInReserve
+						;$baseProductCode				;$super_categories		;Microsoft			;2758B015AA			;pieces			;8714574516769	;$variantType					;$productType	;					;			;$offlineDate								;$onlineDate							;12
+	
+INSERT_UPDATE ElectronicsColorVariantProduct	;code[unique=true]	;$baseProduct		;ean			;unit(code)	;variantName[lang=$lang]	;colorCode	;$supercategories		;type(code)								;approvalstatus(code)[default='approved']	;$catalogVersion	;offlineDate[dateformat=dd.MM.yyyy HH:mm]	;onlineDate[dateformat=dd.MM.yyyy HH:mm]	;keepInventory[default=false]	;keepInReserve;saleStatus(code)@VARIANT1:START@
+												;$variant1Code 		;$baseProductCode	;8714574516769	;pieces		;$variant1Name				;			;$super_categories		;$ElectronicsColorVariantProductType	;											;					;$offlineDate								;$onlineDate								;								;12			  ;$saleStatus	@VARIANT1:END@@VARIANT2:START@
+												;$variant2Code 		;$baseProductCode	;8714574516769	;pieces		;$variant2Name				;			;$super_categories		;$ElectronicsColorVariantProductType	;											;					;$offlineDate								;$onlineDate								;								;12			  ;$saleStatus	@VARIANT2:END@@VARIANT3:START@
+												;$variant3Code 		;$baseProductCode	;8714574516769	;pieces		;$variant3Name				;			;$super_categories		;$ElectronicsColorVariantProductType	;											;					;$offlineDate								;$onlineDate								;								;12			  ;$saleStatus	@VARIANT3:END@@VARIANT4:START@
+												;$variant4Code 		;$baseProductCode	;8714574516769	;pieces		;$variant4Name				;			;$super_categories		;$ElectronicsColorVariantProductType	;											;					;$offlineDate								;$onlineDate								;								;12			  ;$saleStatus	@VARIANT4:END@@VARIANT5:START@
+												;$variant5Code 		;$baseProductCode	;8714574516769	;pieces		;$variant5Name				;			;$super_categories		;$ElectronicsColorVariantProductType	;											;					;$offlineDate								;$onlineDate								;								;12			  ;$saleStatus	@VARIANT5:END@@VARIANT6:START@
+												;$variant6Code 		;$baseProductCode	;8714574516769	;pieces		;$variant6Name				;			;$super_categories		;$ElectronicsColorVariantProductType	;											;					;$offlineDate								;$onlineDate								;								;12			  ;$saleStatus	@VARIANT6:END@@VARIANT7:START@
+												;$variant7Code 		;$baseProductCode	;8714574516769	;pieces		;$variant7Name				;			;$super_categories		;$ElectronicsColorVariantProductType	;											;					;$offlineDate								;$onlineDate								;								;12			  ;$saleStatus	@VARIANT7:END@@VARIANT8:START@
+												;$variant8Code 		;$baseProductCode	;8714574516769	;pieces		;$variant8Name				;			;$super_categories		;$ElectronicsColorVariantProductType	;											;					;$offlineDate								;$onlineDate								;								;12			  ;$saleStatus	@VARIANT8:END@

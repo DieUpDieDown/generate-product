@@ -1,0 +1,26 @@
+$version=Staged
+#******************************This file is generated - please do not edit it. It will be regenerated after every build.********************************#
+# ImpEx template for Importing all Localisations for Products in the Electronics Store
+
+# Macros / Replacement Parameter definitions
+$productCatalog=msscnProductCatalog
+$productCatalogName=Microsoft Product Catalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='$version'])[unique=true,default=$productCatalog:$version]
+
+$lang=zh
+
+# Import config properties into impex macros
+UPDATE GenericItem[processor=de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor];pk[unique=true];;
+
+$baseProductCode=@BASE_PRODUCT_CODE@
+
+# Load the storefront context root config param
+$P_THEME_RESOURCE_PATH=$config-impex.static.image.path
+
+#############################################################################################################
+#################################### Update Description for base product ####################################
+UPDATE Product;code[unique=true] ;$catalogVersion;description[lang=$lang]
+
+			  ;$baseProductCode  ;               ;"
+@PRODUCT_DESCRIPTIONN@
+"

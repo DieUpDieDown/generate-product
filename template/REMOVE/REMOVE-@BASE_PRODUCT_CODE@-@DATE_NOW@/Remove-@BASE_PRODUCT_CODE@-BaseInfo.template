@@ -1,0 +1,398 @@
+$version=Staged
+$ElectronicsColorVariantProductType=@ELECTRONICS_COLOR_VARIANT_PRODUCT_TYPE@
+$super_categories=@SUPER_CATEGORIES@
+$saleStatus=@SALE_STATUS@
+
+$variantNumber=@VARIANT_NUMBER@
+$imageDetailNumber=@IMAGE_DETAIL_NUMBER@
+# ImpEx for Importing Products into Electronics Store
+
+# Macros / Replacement Parameter definitions
+$productCatalog=msscnProductCatalog
+$productCatalogName=Microsoft Product Catalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='$version'])[unique=true,default=$productCatalog:$version]
+$supercategories=supercategories(code, $catalogVersion)
+$baseProduct=baseProduct(code,$catalogVersion)
+$approved=approvalstatus(code)[default='approved']
+$offlineDate = 31.12.9999 23:59
+$onlineDate = 04.11.2013 23:59
+$lang=zh
+
+# Import config properties into impex macros
+UPDATE GenericItem[processor=de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor];pk[unique=true];;
+
+# Load the storefront context root config param
+$P_THEME_RESOURCE_PATH=$config-impex.static.image.path
+
+$media=@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
+$thumbnail=thumbnail(code, $catalogVersion)
+$picture=picture(code, $catalogVersion)
+$thumbnails=thumbnails(code, $catalogVersion)
+$detail=detail(code, $catalogVersion)
+$normal=normal(code, $catalogVersion)
+$others=others(code, $catalogVersion)
+$data_sheet=data_sheet(code, $catalogVersion)
+$medias=medias(code, $catalogVersion)
+$galleryImages=galleryImages(qualifier, $catalogVersion)
+$siteResource=jar:com.microsoft.store.cn.initialdata.setup.InitialDataSystemSetup&/msscninitialdata/import/productCatalogs/$productCatalog
+$productCatalog=msscnProductCatalog
+$productCatalogName=Microsoft Product Catalog
+
+$prices=Europe1prices[translator=de.hybris.platform.europe1.jalo.impex.Europe1PricesTranslator]
+$taxGroup=
+
+# Set product approval status to Approved only for those products that have prices.
+$approved=approvalstatus(code)[default='approved']
+$wasPrice=@wasPrice[translator=com.microsoft.store.cn.core.impex.translator.ProductWasPriceTranslator]
+
+$vendor=default
+$colorSwatch=colorSwatch(code, $catalogVersion)
+
+
+$baseProductCode=@BASE_PRODUCT_CODE@
+$baseProductName=@BASE_PRODUCT_NAME@
+$baseProductPrices=@BASE_PRODUCT_PRICES@
+$baseProductWasPrices=@BASE_PRODUCT_WAS_PRICES@
+@VARIANT1:START@
+
+$variant1Code=@VARIANT_1_CODE@
+$variant1Name=@VARIANT_1_NAME@
+$variant1Prices=@VARIANT_1_PRICES@
+$variant1WasPrices=@VARIANT_1_WAS_PRICES@
+$variant1ImageName=@VARIANT_1_IMAGE_NAME@
+$variant1promotionText=@VARIANT_1_PROMOTION_TEXT@
+$variant1Summary=@VARIANT_1_SUMMARY@
+$variant1SummaryRichText=@VARIANT_1_SUMMARY_RICH_TEXT@@VARIANT1:END@@VARIANT2:START@
+
+$variant2Code=@VARIANT_2_CODE@
+$variant2Name=@VARIANT_2_NAME@
+$variant2Prices=@VARIANT_2_PRICES@
+$variant2WasPrices=@VARIANT_2_WAS_PRICES@
+$variant2ImageName=@VARIANT_2_IMAGE_NAME@
+$variant2promotionText=@VARIANT_2_PROMOTION_TEXT@
+$variant2Summary=@VARIANT_2_SUMMARY@
+$variant2SummaryRichText=@VARIANT_2_SUMMARY_RICH_TEXT@@VARIANT2:END@@VARIANT3:START@
+
+$variant3Code=@VARIANT_3_CODE@
+$variant3Name=@VARIANT_3_NAME@
+$variant3Prices=@VARIANT_3_PRICES@
+$variant3WasPrices=@VARIANT_3_WAS_PRICES@
+$variant3ImageName=@VARIANT_3_IMAGE_NAME@
+$variant3promotionText=@VARIANT_3_PROMOTION_TEXT@
+$variant3Summary=@VARIANT_3_SUMMARY@
+$variant3SummaryRichText=@VARIANT_3_SUMMARY_RICH_TEXT@@VARIANT3:END@@VARIANT4:START@
+
+$variant4Code=@VARIANT_4_CODE@
+$variant4Name=@VARIANT_4_NAME@
+$variant4Prices=@VARIANT_4_PRICES@
+$variant4WasPrices=@VARIANT_4_WAS_PRICES@
+$variant4ImageName=@VARIANT_4_IMAGE_NAME@
+$variant4promotionText=@VARIANT_4_PROMOTION_TEXT@
+$variant4Summary=@VARIANT_4_SUMMARY@
+$variant4SummaryRichText=@VARIANT_4_SUMMARY_RICH_TEXT@@VARIANT4:END@@VARIANT5:START@
+
+$variant5Code=@VARIANT_5_CODE@
+$variant5Name=@VARIANT_5_NAME@
+$variant5Prices=@VARIANT_5_PRICES@
+$variant5WasPrices=@VARIANT_5_WAS_PRICES@
+$variant5ImageName=@VARIANT_5_IMAGE_NAME@
+$variant5promotionText=@VARIANT_5_PROMOTION_TEXT@
+$variant5Summary=@VARIANT_5_SUMMARY@
+$variant5SummaryRichText=@VARIANT_5_SUMMARY_RICH_TEXT@@VARIANT5:END@@VARIANT6:START@
+
+$variant6Code=@VARIANT_6_CODE@
+$variant6Name=@VARIANT_6_NAME@
+$variant6Prices=@VARIANT_6_PRICES@
+$variant6WasPrices=@VARIANT_6_WAS_PRICES@
+$variant6ImageName=@VARIANT_6_IMAGE_NAME@
+$variant6promotionText=@VARIANT_6_PROMOTION_TEXT@
+$variant6Summary=@VARIANT_6_SUMMARY@
+$variant6SummaryRichText=@VARIANT_6_SUMMARY_RICH_TEXT@@VARIANT6:END@@VARIANT7:START@
+
+$variant7Code=@VARIANT_7_CODE@
+$variant7Name=@VARIANT_7_NAME@
+$variant7Prices=@VARIANT_7_PRICES@
+$variant7WasPrices=@VARIANT_7_WAS_PRICES@
+$variant7ImageName=@VARIANT_7_IMAGE_NAME@
+$variant7promotionText=@VARIANT_7_PROMOTION_TEXT@
+$variant7Summary=@VARIANT_7_SUMMARY@
+$variant7SummaryRichText=@VARIANT_7_SUMMARY_RICH_TEXT@@VARIANT7:END@@VARIANT8:START@
+
+$variant8Code=@VARIANT_8_CODE@
+$variant8Name=@VARIANT_8_NAME@
+$variant8Prices=@VARIANT_8_PRICES@
+$variant8WasPrices=@VARIANT_8_WAS_PRICES@
+$variant8ImageName=@VARIANT_8_IMAGE_NAME@
+$variant8promotionText=@VARIANT_8_PROMOTION_TEXT@
+$variant8Summary=@VARIANT_8_SUMMARY@
+$variant8SummaryRichText=@VARIANT_8_SUMMARY_RICH_TEXT@@VARIANT8:END@
+
+##############################################################################################
+#################################    VARIANT-END       #######################################
+##############################################################################################
+
+##############################################################################################
+########################### @BASE_PRODUCT_CODE@		@VARIANT1:START@
+###########################		@VARIANT_1_CODE@	@VARIANT1:END@@VARIANT2:START@
+###########################		@VARIANT_2_CODE@	@VARIANT2:END@@VARIANT3:START@
+###########################		@VARIANT_3_CODE@	@VARIANT3:END@@VARIANT4:START@
+###########################		@VARIANT_4_CODE@	@VARIANT4:END@@VARIANT5:START@
+###########################		@VARIANT_5_CODE@	@VARIANT5:END@@VARIANT6:START@
+###########################		@VARIANT_6_CODE@	@VARIANT6:END@@VARIANT7:START@
+###########################		@VARIANT_7_CODE@	@VARIANT7:END@@VARIANT8:START@
+###########################		@VARIANT_8_CODE@	@VARIANT8:END@
+##############################################################################################
+
+REMOVE 	Product	;code[unique=true] 	;$catalogVersion	;@VARIANT1:START@
+				;$variant1Code		;					;@VARIANT1:END@@VARIANT2:START@
+				;$variant2Code		;					;@VARIANT2:END@@VARIANT3:START@
+				;$variant3Code		;					;@VARIANT3:END@@VARIANT4:START@
+				;$variant4Code		;					;@VARIANT4:END@@VARIANT5:START@
+				;$variant5Code		;					;@VARIANT5:END@@VARIANT6:START@
+				;$variant6Code		;					;@VARIANT6:END@@VARIANT7:START@
+				;$variant7Code		;					;@VARIANT7:END@@VARIANT8:START@
+				;$variant8Code		;					;@VARIANT8:END@
+		
+REMOVE 	Product	;code[unique=true]		;$catalogVersion
+				;$baseProductCode		;										
+
+REMOVE StockLevel	;warehouse(code)[unique=true]	;productCode[unique=true]	@VARIANT1:START@
+					;warehouse_e					;$variant1Code				@VARIANT1:END@@VARIANT2:START@
+					;warehouse_e					;$variant2Code				@VARIANT2:END@@VARIANT3:START@
+					;warehouse_e					;$variant3Code				@VARIANT3:END@@VARIANT4:START@
+					;warehouse_e					;$variant4Code				@VARIANT4:END@@VARIANT5:START@
+					;warehouse_e					;$variant5Code				@VARIANT5:END@@VARIANT6:START@
+					;warehouse_e					;$variant6Code				@VARIANT6:END@@VARIANT7:START@
+					;warehouse_e					;$variant7Code				@VARIANT7:END@@VARIANT8:START@
+					;warehouse_e					;$variant8Code				@VARIANT8:END@@VARIANT1:START@
+
+##################### Insert Media ##################
+# VARIAN @VARIANT_1_CODE@
+REMOVE 		Media	;code[unique=true]	  				;$catalogVersion@IMAGE_FILE_BLOCK_1_96Wx96H_1:START@@IMAGE_DETAIL_NUMBER_1:START@
+					;$variant1ImageName96Wx96H_1.png  	;@IMAGE_DETAIL_NUMBER_1:END@@IMAGE_DETAIL_NUMBER_2:START@
+					;$variant1ImageName96Wx96H_2.png  	;@IMAGE_DETAIL_NUMBER_2:END@@IMAGE_DETAIL_NUMBER_3:START@
+					;$variant1ImageName96Wx96H_3.png  	;@IMAGE_DETAIL_NUMBER_3:END@@IMAGE_FILE_BLOCK_1_96Wx96H_1:END@@IMAGE_FILE_BLOCK_1_125Wx90H:START@
+					;$variant1ImageName125Wx90H.png  	;@IMAGE_FILE_BLOCK_1_125Wx90H:END@@IMAGE_FILE_BLOCK_1_128Wx114H:START@
+					;$variant1ImageName128Wx114H.png  	;@IMAGE_FILE_BLOCK_1_128Wx114H:END@@IMAGE_FILE_BLOCK_1_128Wx85H:START@
+					;$variant1ImageName128Wx85H.png  	;@IMAGE_FILE_BLOCK_1_128Wx85H:END@@IMAGE_FILE_BLOCK_1_130Wx130H:START@
+					;$variant1ImageName130Wx130H.png  	;@IMAGE_FILE_BLOCK_1_130Wx130H:END@@IMAGE_FILE_BLOCK_1_130Wx80H:START@
+					;$variant1ImageName130Wx80H.png  	;@IMAGE_FILE_BLOCK_1_130Wx80H:END@@IMAGE_FILE_BLOCK_1_138Wx80H:START@
+					;$variant1ImageName138Wx80H.png  	;@IMAGE_FILE_BLOCK_1_138Wx80H:END@@IMAGE_FILE_BLOCK_1_164Wx115H:START@
+					;$variant1ImageName164Wx115H.png  	;@IMAGE_FILE_BLOCK_1_164Wx115H:END@@IMAGE_FILE_BLOCK_1_220Wx120H:START@
+					;$variant1ImageName220Wx120H.png  	;@IMAGE_FILE_BLOCK_1_220Wx120H:END@@IMAGE_FILE_BLOCK_1_300Wx180H:START@
+					;$variant1ImageName300Wx180H.png  	;@IMAGE_FILE_BLOCK_1_300Wx180H:END@@IMAGE_FILE_BLOCK_1_30Wx32H:START@
+					;$variant1ImageName30Wx32H.png  	;@IMAGE_FILE_BLOCK_1_30Wx32H:END@@IMAGE_FILE_BLOCK_1_300Wx300H_1:START@@IMAGE_DETAIL_NUMBER_1:START@
+					;$variant1ImageName300Wx300H_1.png  ;@IMAGE_DETAIL_NUMBER_1:END@@IMAGE_DETAIL_NUMBER_2:START@
+					;$variant1ImageName300Wx300H_2.png  ;@IMAGE_DETAIL_NUMBER_2:END@@IMAGE_DETAIL_NUMBER_3:START@
+					;$variant1ImageName300Wx300H_3.png  ;@IMAGE_DETAIL_NUMBER_3:END@@IMAGE_FILE_BLOCK_1_300Wx300H_1:END@									
+REMOVE 			MediaContainer	;qualifier[unique=true]				;$catalogVersion						
+								;$variant1ImageName1_container		;@IMAGE_FILE_BLOCK_1_96Wx96H_1:START@$variant1ImageName96Wx96H_1.png, @IMAGE_FILE_BLOCK_1_96Wx96H_1:END@$variant1ImageName300Wx300H_1.png;@IMAGE_DETAIL_NUMBER_2:START@
+								;$variant1ImageName2_container		;@IMAGE_FILE_BLOCK_1_96Wx96H_1:START@$variant1ImageName96Wx96H_2.png, @IMAGE_FILE_BLOCK_1_96Wx96H_1:END@$variant1ImageName300Wx300H_2.png, $variant1ImageName300Wx300H_1.png@IMAGE_FILE_BLOCK_1_96Wx96H_1:START@, $variant1ImageName96Wx96H_1.png@IMAGE_FILE_BLOCK_1_96Wx96H_1:END@;@IMAGE_DETAIL_NUMBER_2:END@@IMAGE_DETAIL_NUMBER_3:START@		
+								;$variant1ImageName3_container		;@IMAGE_FILE_BLOCK_1_96Wx96H_1:START@$variant1ImageName96Wx96H_3.png, @IMAGE_FILE_BLOCK_1_96Wx96H_1:END@$variant1ImageName300Wx300H_3.png, $variant1ImageName300Wx300H_1.png@IMAGE_FILE_BLOCK_1_96Wx96H_1:START@, $variant1ImageName96Wx96H_1.png@IMAGE_FILE_BLOCK_1_96Wx96H_1:END@;@IMAGE_DETAIL_NUMBER_3:END@
+								;$variant1ImageNamecontainer		;$variant1ImageName125Wx90H.png, $variant1ImageName128Wx114H.png, $variant1ImageName128Wx85H.png, $variant1ImageName130Wx130H.png, $variant1ImageName130Wx80H.png, $variant1ImageName138Wx80H.png, $variant1ImageName164Wx115H.png, $variant1ImageName220Wx120H.png, $variant1ImageName300Wx180H.png, $variant1ImageName30Wx32H.png, $variant1ImageName300Wx300H_1.png@IMAGE_FILE_BLOCK_1_96Wx96H_1:START@, $variant1ImageName96Wx96H_1.png@IMAGE_FILE_BLOCK_1_96Wx96H_1:END@;
+									
+REMOVE 	 ElectronicsColorVariantProduct ;code[unique=true]; $catalogVersion	; 
+										;$variant1Code     ;               	;@VARIANT1:END@
+@VARIANT2:START@
+
+##################### Insert Media ##################
+# VARIAN @VARIANT_2_CODE@
+REMOVE 		Media	;code[unique=true]	  				;$catalogVersion@IMAGE_FILE_BLOCK_2_96Wx96H_1:START@@IMAGE_DETAIL_NUMBER_1:START@
+					;$variant2ImageName96Wx96H_1.png  	;@IMAGE_DETAIL_NUMBER_1:END@@IMAGE_DETAIL_NUMBER_2:START@
+					;$variant2ImageName96Wx96H_2.png  	;@IMAGE_DETAIL_NUMBER_2:END@@IMAGE_DETAIL_NUMBER_3:START@
+					;$variant2ImageName96Wx96H_3.png  	;@IMAGE_DETAIL_NUMBER_3:END@@IMAGE_FILE_BLOCK_2_96Wx96H_1:END@@IMAGE_FILE_BLOCK_2_125Wx90H:START@
+					;$variant2ImageName125Wx90H.png  	;@IMAGE_FILE_BLOCK_2_125Wx90H:END@@IMAGE_FILE_BLOCK_2_128Wx114H:START@
+					;$variant2ImageName128Wx114H.png  	;@IMAGE_FILE_BLOCK_2_128Wx114H:END@@IMAGE_FILE_BLOCK_2_128Wx85H:START@
+					;$variant2ImageName128Wx85H.png  	;@IMAGE_FILE_BLOCK_2_128Wx85H:END@@IMAGE_FILE_BLOCK_2_130Wx130H:START@
+					;$variant2ImageName130Wx130H.png  	;@IMAGE_FILE_BLOCK_2_130Wx130H:END@@IMAGE_FILE_BLOCK_2_130Wx80H:START@
+					;$variant2ImageName130Wx80H.png  	;@IMAGE_FILE_BLOCK_2_130Wx80H:END@@IMAGE_FILE_BLOCK_2_138Wx80H:START@
+					;$variant2ImageName138Wx80H.png  	;@IMAGE_FILE_BLOCK_2_138Wx80H:END@@IMAGE_FILE_BLOCK_2_164Wx115H:START@
+					;$variant2ImageName164Wx115H.png  	;@IMAGE_FILE_BLOCK_2_164Wx115H:END@@IMAGE_FILE_BLOCK_2_220Wx120H:START@
+					;$variant2ImageName220Wx120H.png  	;@IMAGE_FILE_BLOCK_2_220Wx120H:END@@IMAGE_FILE_BLOCK_2_300Wx180H:START@
+					;$variant2ImageName300Wx180H.png  	;@IMAGE_FILE_BLOCK_2_300Wx180H:END@@IMAGE_FILE_BLOCK_2_30Wx32H:START@
+					;$variant2ImageName30Wx32H.png  	;@IMAGE_FILE_BLOCK_2_30Wx32H:END@@IMAGE_FILE_BLOCK_2_300Wx300H_1:START@@IMAGE_DETAIL_NUMBER_1:START@
+					;$variant2ImageName300Wx300H_1.png  ;@IMAGE_DETAIL_NUMBER_1:END@@IMAGE_DETAIL_NUMBER_2:START@
+					;$variant2ImageName300Wx300H_2.png  ;@IMAGE_DETAIL_NUMBER_2:END@@IMAGE_DETAIL_NUMBER_3:START@
+					;$variant2ImageName300Wx300H_3.png  ;@IMAGE_DETAIL_NUMBER_3:END@@IMAGE_FILE_BLOCK_2_300Wx300H_1:END@									
+REMOVE 			MediaContainer	;qualifier[unique=true]				;$catalogVersion						
+								;$variant2ImageName1_container		;@IMAGE_FILE_BLOCK_2_96Wx96H_1:START@$variant2ImageName96Wx96H_1.png, @IMAGE_FILE_BLOCK_2_96Wx96H_1:END@$variant2ImageName300Wx300H_1.png;@IMAGE_DETAIL_NUMBER_2:START@
+								;$variant2ImageName2_container		;@IMAGE_FILE_BLOCK_2_96Wx96H_1:START@$variant2ImageName96Wx96H_2.png, @IMAGE_FILE_BLOCK_2_96Wx96H_1:END@$variant2ImageName300Wx300H_2.png, $variant2ImageName300Wx300H_1.png@IMAGE_FILE_BLOCK_2_96Wx96H_1:START@, $variant2ImageName96Wx96H_1.png@IMAGE_FILE_BLOCK_2_96Wx96H_1:END@;@IMAGE_DETAIL_NUMBER_2:END@@IMAGE_DETAIL_NUMBER_3:START@		
+								;$variant2ImageName3_container		;@IMAGE_FILE_BLOCK_2_96Wx96H_1:START@$variant2ImageName96Wx96H_3.png, @IMAGE_FILE_BLOCK_2_96Wx96H_1:END@$variant2ImageName300Wx300H_3.png, $variant2ImageName300Wx300H_1.png@IMAGE_FILE_BLOCK_2_96Wx96H_1:START@, $variant2ImageName96Wx96H_1.png@IMAGE_FILE_BLOCK_2_96Wx96H_1:END@;@IMAGE_DETAIL_NUMBER_3:END@
+								;$variant2ImageNamecontainer		;$variant2ImageName125Wx90H.png, $variant2ImageName128Wx114H.png, $variant2ImageName128Wx85H.png, $variant2ImageName130Wx130H.png, $variant2ImageName130Wx80H.png, $variant2ImageName138Wx80H.png, $variant2ImageName164Wx115H.png, $variant2ImageName220Wx120H.png, $variant2ImageName300Wx180H.png, $variant2ImageName30Wx32H.png, $variant2ImageName300Wx300H_1.png@IMAGE_FILE_BLOCK_2_96Wx96H_1:START@, $variant2ImageName96Wx96H_1.png@IMAGE_FILE_BLOCK_2_96Wx96H_1:END@;
+									
+REMOVE 	 ElectronicsColorVariantProduct ;code[unique=true]; $catalogVersion	; 
+										;$variant2Code     ;               	;@VARIANT2:END@
+@VARIANT3:START@
+
+##################### Insert Media ##################
+# VARIAN @VARIANT_3_CODE@
+REMOVE 		Media	;code[unique=true]	  				;$catalogVersion@IMAGE_FILE_BLOCK_3_96Wx96H_1:START@@IMAGE_DETAIL_NUMBER_1:START@
+					;$variant3ImageName96Wx96H_1.png  	;@IMAGE_DETAIL_NUMBER_1:END@@IMAGE_DETAIL_NUMBER_2:START@
+					;$variant3ImageName96Wx96H_2.png  	;@IMAGE_DETAIL_NUMBER_2:END@@IMAGE_DETAIL_NUMBER_3:START@
+					;$variant3ImageName96Wx96H_3.png  	;@IMAGE_DETAIL_NUMBER_3:END@@IMAGE_FILE_BLOCK_3_96Wx96H_1:END@@IMAGE_FILE_BLOCK_3_125Wx90H:START@
+					;$variant3ImageName125Wx90H.png  	;@IMAGE_FILE_BLOCK_3_125Wx90H:END@@IMAGE_FILE_BLOCK_3_128Wx114H:START@
+					;$variant3ImageName128Wx114H.png  	;@IMAGE_FILE_BLOCK_3_128Wx114H:END@@IMAGE_FILE_BLOCK_3_128Wx85H:START@
+					;$variant3ImageName128Wx85H.png  	;@IMAGE_FILE_BLOCK_3_128Wx85H:END@@IMAGE_FILE_BLOCK_3_130Wx130H:START@
+					;$variant3ImageName130Wx130H.png  	;@IMAGE_FILE_BLOCK_3_130Wx130H:END@@IMAGE_FILE_BLOCK_3_130Wx80H:START@
+					;$variant3ImageName130Wx80H.png  	;@IMAGE_FILE_BLOCK_3_130Wx80H:END@@IMAGE_FILE_BLOCK_3_138Wx80H:START@
+					;$variant3ImageName138Wx80H.png  	;@IMAGE_FILE_BLOCK_3_138Wx80H:END@@IMAGE_FILE_BLOCK_3_164Wx115H:START@
+					;$variant3ImageName164Wx115H.png  	;@IMAGE_FILE_BLOCK_3_164Wx115H:END@@IMAGE_FILE_BLOCK_3_220Wx120H:START@
+					;$variant3ImageName220Wx120H.png  	;@IMAGE_FILE_BLOCK_3_220Wx120H:END@@IMAGE_FILE_BLOCK_3_300Wx180H:START@
+					;$variant3ImageName300Wx180H.png  	;@IMAGE_FILE_BLOCK_3_300Wx180H:END@@IMAGE_FILE_BLOCK_3_30Wx32H:START@
+					;$variant3ImageName30Wx32H.png  	;@IMAGE_FILE_BLOCK_3_30Wx32H:END@@IMAGE_FILE_BLOCK_3_300Wx300H_1:START@@IMAGE_DETAIL_NUMBER_1:START@
+					;$variant3ImageName300Wx300H_1.png  ;@IMAGE_DETAIL_NUMBER_1:END@@IMAGE_DETAIL_NUMBER_2:START@
+					;$variant3ImageName300Wx300H_2.png  ;@IMAGE_DETAIL_NUMBER_2:END@@IMAGE_DETAIL_NUMBER_3:START@
+					;$variant3ImageName300Wx300H_3.png  ;@IMAGE_DETAIL_NUMBER_3:END@@IMAGE_FILE_BLOCK_3_300Wx300H_1:END@									
+REMOVE 			MediaContainer	;qualifier[unique=true]				;$catalogVersion						
+								;$variant3ImageName1_container		;@IMAGE_FILE_BLOCK_3_96Wx96H_1:START@$variant3ImageName96Wx96H_1.png, @IMAGE_FILE_BLOCK_3_96Wx96H_1:END@$variant3ImageName300Wx300H_1.png;@IMAGE_DETAIL_NUMBER_2:START@
+								;$variant3ImageName2_container		;@IMAGE_FILE_BLOCK_3_96Wx96H_1:START@$variant3ImageName96Wx96H_2.png, @IMAGE_FILE_BLOCK_3_96Wx96H_1:END@$variant3ImageName300Wx300H_2.png, $variant3ImageName300Wx300H_1.png@IMAGE_FILE_BLOCK_3_96Wx96H_1:START@, $variant3ImageName96Wx96H_1.png@IMAGE_FILE_BLOCK_3_96Wx96H_1:END@;@IMAGE_DETAIL_NUMBER_2:END@@IMAGE_DETAIL_NUMBER_3:START@		
+								;$variant3ImageName3_container		;@IMAGE_FILE_BLOCK_3_96Wx96H_1:START@$variant3ImageName96Wx96H_3.png, @IMAGE_FILE_BLOCK_3_96Wx96H_1:END@$variant3ImageName300Wx300H_3.png, $variant3ImageName300Wx300H_1.png@IMAGE_FILE_BLOCK_3_96Wx96H_1:START@, $variant3ImageName96Wx96H_1.png@IMAGE_FILE_BLOCK_3_96Wx96H_1:END@;@IMAGE_DETAIL_NUMBER_3:END@
+								;$variant3ImageNamecontainer		;$variant3ImageName125Wx90H.png, $variant3ImageName128Wx114H.png, $variant3ImageName128Wx85H.png, $variant3ImageName130Wx130H.png, $variant3ImageName130Wx80H.png, $variant3ImageName138Wx80H.png, $variant3ImageName164Wx115H.png, $variant3ImageName220Wx120H.png, $variant3ImageName300Wx180H.png, $variant3ImageName30Wx32H.png, $variant3ImageName300Wx300H_1.png@IMAGE_FILE_BLOCK_3_96Wx96H_1:START@, $variant3ImageName96Wx96H_1.png@IMAGE_FILE_BLOCK_3_96Wx96H_1:END@;
+									
+REMOVE 	 ElectronicsColorVariantProduct ;code[unique=true]; $catalogVersion	; 
+										;$variant3Code     ;               	;@VARIANT3:END@
+@VARIANT4:START@
+
+##################### Insert Media ##################
+# VARIAN @VARIANT_4_CODE@
+REMOVE 		Media	;code[unique=true]	  				;$catalogVersion@IMAGE_FILE_BLOCK_4_96Wx96H_1:START@@IMAGE_DETAIL_NUMBER_1:START@
+					;$variant4ImageName96Wx96H_1.png  	;@IMAGE_DETAIL_NUMBER_1:END@@IMAGE_DETAIL_NUMBER_2:START@
+					;$variant4ImageName96Wx96H_2.png  	;@IMAGE_DETAIL_NUMBER_2:END@@IMAGE_DETAIL_NUMBER_3:START@
+					;$variant4ImageName96Wx96H_3.png  	;@IMAGE_DETAIL_NUMBER_3:END@@IMAGE_FILE_BLOCK_4_96Wx96H_1:END@@IMAGE_FILE_BLOCK_4_125Wx90H:START@
+					;$variant4ImageName125Wx90H.png  	;@IMAGE_FILE_BLOCK_4_125Wx90H:END@@IMAGE_FILE_BLOCK_4_128Wx114H:START@
+					;$variant4ImageName128Wx114H.png  	;@IMAGE_FILE_BLOCK_4_128Wx114H:END@@IMAGE_FILE_BLOCK_4_128Wx85H:START@
+					;$variant4ImageName128Wx85H.png  	;@IMAGE_FILE_BLOCK_4_128Wx85H:END@@IMAGE_FILE_BLOCK_4_130Wx130H:START@
+					;$variant4ImageName130Wx130H.png  	;@IMAGE_FILE_BLOCK_4_130Wx130H:END@@IMAGE_FILE_BLOCK_4_130Wx80H:START@
+					;$variant4ImageName130Wx80H.png  	;@IMAGE_FILE_BLOCK_4_130Wx80H:END@@IMAGE_FILE_BLOCK_4_138Wx80H:START@
+					;$variant4ImageName138Wx80H.png  	;@IMAGE_FILE_BLOCK_4_138Wx80H:END@@IMAGE_FILE_BLOCK_4_164Wx115H:START@
+					;$variant4ImageName164Wx115H.png  	;@IMAGE_FILE_BLOCK_4_164Wx115H:END@@IMAGE_FILE_BLOCK_4_220Wx120H:START@
+					;$variant4ImageName220Wx120H.png  	;@IMAGE_FILE_BLOCK_4_220Wx120H:END@@IMAGE_FILE_BLOCK_4_300Wx180H:START@
+					;$variant4ImageName300Wx180H.png  	;@IMAGE_FILE_BLOCK_4_300Wx180H:END@@IMAGE_FILE_BLOCK_4_30Wx32H:START@
+					;$variant4ImageName30Wx32H.png  	;@IMAGE_FILE_BLOCK_4_30Wx32H:END@@IMAGE_FILE_BLOCK_4_300Wx300H_1:START@@IMAGE_DETAIL_NUMBER_1:START@
+					;$variant4ImageName300Wx300H_1.png  ;@IMAGE_DETAIL_NUMBER_1:END@@IMAGE_DETAIL_NUMBER_2:START@
+					;$variant4ImageName300Wx300H_2.png  ;@IMAGE_DETAIL_NUMBER_2:END@@IMAGE_DETAIL_NUMBER_3:START@
+					;$variant4ImageName300Wx300H_3.png  ;@IMAGE_DETAIL_NUMBER_3:END@@IMAGE_FILE_BLOCK_4_300Wx300H_1:END@									
+REMOVE 			MediaContainer	;qualifier[unique=true]				;$catalogVersion						
+								;$variant4ImageName1_container		;@IMAGE_FILE_BLOCK_4_96Wx96H_1:START@$variant4ImageName96Wx96H_1.png, @IMAGE_FILE_BLOCK_4_96Wx96H_1:END@$variant4ImageName300Wx300H_1.png;@IMAGE_DETAIL_NUMBER_2:START@
+								;$variant4ImageName2_container		;@IMAGE_FILE_BLOCK_4_96Wx96H_1:START@$variant4ImageName96Wx96H_2.png, @IMAGE_FILE_BLOCK_4_96Wx96H_1:END@$variant4ImageName300Wx300H_2.png, $variant4ImageName300Wx300H_1.png@IMAGE_FILE_BLOCK_4_96Wx96H_1:START@, $variant4ImageName96Wx96H_1.png@IMAGE_FILE_BLOCK_4_96Wx96H_1:END@;@IMAGE_DETAIL_NUMBER_2:END@@IMAGE_DETAIL_NUMBER_3:START@		
+								;$variant4ImageName3_container		;@IMAGE_FILE_BLOCK_4_96Wx96H_1:START@$variant4ImageName96Wx96H_3.png, @IMAGE_FILE_BLOCK_4_96Wx96H_1:END@$variant4ImageName300Wx300H_3.png, $variant4ImageName300Wx300H_1.png@IMAGE_FILE_BLOCK_4_96Wx96H_1:START@, $variant4ImageName96Wx96H_1.png@IMAGE_FILE_BLOCK_4_96Wx96H_1:END@;@IMAGE_DETAIL_NUMBER_3:END@
+								;$variant4ImageNamecontainer		;$variant4ImageName125Wx90H.png, $variant4ImageName128Wx114H.png, $variant4ImageName128Wx85H.png, $variant4ImageName130Wx130H.png, $variant4ImageName130Wx80H.png, $variant4ImageName138Wx80H.png, $variant4ImageName164Wx115H.png, $variant4ImageName220Wx120H.png, $variant4ImageName300Wx180H.png, $variant4ImageName30Wx32H.png, $variant4ImageName300Wx300H_1.png@IMAGE_FILE_BLOCK_4_96Wx96H_1:START@, $variant4ImageName96Wx96H_1.png@IMAGE_FILE_BLOCK_4_96Wx96H_1:END@;
+									
+REMOVE 	 ElectronicsColorVariantProduct ;code[unique=true]; $catalogVersion	; 
+										;$variant4Code     ;               	;@VARIANT4:END@
+@VARIANT5:START@
+
+##################### Insert Media ##################
+# VARIAN @VARIANT_5_CODE@
+REMOVE 		Media	;code[unique=true]	  				;$catalogVersion@IMAGE_FILE_BLOCK_5_96Wx96H_1:START@@IMAGE_DETAIL_NUMBER_1:START@
+					;$variant5ImageName96Wx96H_1.png  	;@IMAGE_DETAIL_NUMBER_1:END@@IMAGE_DETAIL_NUMBER_2:START@
+					;$variant5ImageName96Wx96H_2.png  	;@IMAGE_DETAIL_NUMBER_2:END@@IMAGE_DETAIL_NUMBER_3:START@
+					;$variant5ImageName96Wx96H_3.png  	;@IMAGE_DETAIL_NUMBER_3:END@@IMAGE_FILE_BLOCK_5_96Wx96H_1:END@@IMAGE_FILE_BLOCK_5_125Wx90H:START@
+					;$variant5ImageName125Wx90H.png  	;@IMAGE_FILE_BLOCK_5_125Wx90H:END@@IMAGE_FILE_BLOCK_5_128Wx114H:START@
+					;$variant5ImageName128Wx114H.png  	;@IMAGE_FILE_BLOCK_5_128Wx114H:END@@IMAGE_FILE_BLOCK_5_128Wx85H:START@
+					;$variant5ImageName128Wx85H.png  	;@IMAGE_FILE_BLOCK_5_128Wx85H:END@@IMAGE_FILE_BLOCK_5_130Wx130H:START@
+					;$variant5ImageName130Wx130H.png  	;@IMAGE_FILE_BLOCK_5_130Wx130H:END@@IMAGE_FILE_BLOCK_5_130Wx80H:START@
+					;$variant5ImageName130Wx80H.png  	;@IMAGE_FILE_BLOCK_5_130Wx80H:END@@IMAGE_FILE_BLOCK_5_138Wx80H:START@
+					;$variant5ImageName138Wx80H.png  	;@IMAGE_FILE_BLOCK_5_138Wx80H:END@@IMAGE_FILE_BLOCK_5_164Wx115H:START@
+					;$variant5ImageName164Wx115H.png  	;@IMAGE_FILE_BLOCK_5_164Wx115H:END@@IMAGE_FILE_BLOCK_5_220Wx120H:START@
+					;$variant5ImageName220Wx120H.png  	;@IMAGE_FILE_BLOCK_5_220Wx120H:END@@IMAGE_FILE_BLOCK_5_300Wx180H:START@
+					;$variant5ImageName300Wx180H.png  	;@IMAGE_FILE_BLOCK_5_300Wx180H:END@@IMAGE_FILE_BLOCK_5_30Wx32H:START@
+					;$variant5ImageName30Wx32H.png  	;@IMAGE_FILE_BLOCK_5_30Wx32H:END@@IMAGE_FILE_BLOCK_5_300Wx300H_1:START@@IMAGE_DETAIL_NUMBER_1:START@
+					;$variant5ImageName300Wx300H_1.png  ;@IMAGE_DETAIL_NUMBER_1:END@@IMAGE_DETAIL_NUMBER_2:START@
+					;$variant5ImageName300Wx300H_2.png  ;@IMAGE_DETAIL_NUMBER_2:END@@IMAGE_DETAIL_NUMBER_3:START@
+					;$variant5ImageName300Wx300H_3.png  ;@IMAGE_DETAIL_NUMBER_3:END@@IMAGE_FILE_BLOCK_5_300Wx300H_1:END@									
+REMOVE 			MediaContainer	;qualifier[unique=true]				;$catalogVersion						
+								;$variant5ImageName1_container		;@IMAGE_FILE_BLOCK_5_96Wx96H_1:START@$variant5ImageName96Wx96H_1.png, @IMAGE_FILE_BLOCK_5_96Wx96H_1:END@$variant5ImageName300Wx300H_1.png;@IMAGE_DETAIL_NUMBER_2:START@
+								;$variant5ImageName2_container		;@IMAGE_FILE_BLOCK_5_96Wx96H_1:START@$variant5ImageName96Wx96H_2.png, @IMAGE_FILE_BLOCK_5_96Wx96H_1:END@$variant5ImageName300Wx300H_2.png, $variant5ImageName300Wx300H_1.png@IMAGE_FILE_BLOCK_5_96Wx96H_1:START@, $variant5ImageName96Wx96H_1.png@IMAGE_FILE_BLOCK_5_96Wx96H_1:END@;@IMAGE_DETAIL_NUMBER_2:END@@IMAGE_DETAIL_NUMBER_3:START@		
+								;$variant5ImageName3_container		;@IMAGE_FILE_BLOCK_5_96Wx96H_1:START@$variant5ImageName96Wx96H_3.png, @IMAGE_FILE_BLOCK_5_96Wx96H_1:END@$variant5ImageName300Wx300H_3.png, $variant5ImageName300Wx300H_1.png@IMAGE_FILE_BLOCK_5_96Wx96H_1:START@, $variant5ImageName96Wx96H_1.png@IMAGE_FILE_BLOCK_5_96Wx96H_1:END@;@IMAGE_DETAIL_NUMBER_3:END@
+								;$variant5ImageNamecontainer		;$variant5ImageName125Wx90H.png, $variant5ImageName128Wx114H.png, $variant5ImageName128Wx85H.png, $variant5ImageName130Wx130H.png, $variant5ImageName130Wx80H.png, $variant5ImageName138Wx80H.png, $variant5ImageName164Wx115H.png, $variant5ImageName220Wx120H.png, $variant5ImageName300Wx180H.png, $variant5ImageName30Wx32H.png, $variant5ImageName300Wx300H_1.png@IMAGE_FILE_BLOCK_5_96Wx96H_1:START@, $variant5ImageName96Wx96H_1.png@IMAGE_FILE_BLOCK_5_96Wx96H_1:END@;
+									
+REMOVE 	 ElectronicsColorVariantProduct ;code[unique=true]; $catalogVersion	; 
+										;$variant5Code     ;               	;@VARIANT5:END@
+@VARIANT6:START@
+
+##################### Insert Media ##################
+# VARIAN @VARIANT_6_CODE@
+REMOVE 		Media	;code[unique=true]	  				;$catalogVersion@IMAGE_FILE_BLOCK_6_96Wx96H_1:START@@IMAGE_DETAIL_NUMBER_1:START@
+					;$variant6ImageName96Wx96H_1.png  	;@IMAGE_DETAIL_NUMBER_1:END@@IMAGE_DETAIL_NUMBER_2:START@
+					;$variant6ImageName96Wx96H_2.png  	;@IMAGE_DETAIL_NUMBER_2:END@@IMAGE_DETAIL_NUMBER_3:START@
+					;$variant6ImageName96Wx96H_3.png  	;@IMAGE_DETAIL_NUMBER_3:END@@IMAGE_FILE_BLOCK_6_96Wx96H_1:END@@IMAGE_FILE_BLOCK_6_125Wx90H:START@
+					;$variant6ImageName125Wx90H.png  	;@IMAGE_FILE_BLOCK_6_125Wx90H:END@@IMAGE_FILE_BLOCK_6_128Wx114H:START@
+					;$variant6ImageName128Wx114H.png  	;@IMAGE_FILE_BLOCK_6_128Wx114H:END@@IMAGE_FILE_BLOCK_6_128Wx85H:START@
+					;$variant6ImageName128Wx85H.png  	;@IMAGE_FILE_BLOCK_6_128Wx85H:END@@IMAGE_FILE_BLOCK_6_130Wx130H:START@
+					;$variant6ImageName130Wx130H.png  	;@IMAGE_FILE_BLOCK_6_130Wx130H:END@@IMAGE_FILE_BLOCK_6_130Wx80H:START@
+					;$variant6ImageName130Wx80H.png  	;@IMAGE_FILE_BLOCK_6_130Wx80H:END@@IMAGE_FILE_BLOCK_6_138Wx80H:START@
+					;$variant6ImageName138Wx80H.png  	;@IMAGE_FILE_BLOCK_6_138Wx80H:END@@IMAGE_FILE_BLOCK_6_164Wx115H:START@
+					;$variant6ImageName164Wx115H.png  	;@IMAGE_FILE_BLOCK_6_164Wx115H:END@@IMAGE_FILE_BLOCK_6_220Wx120H:START@
+					;$variant6ImageName220Wx120H.png  	;@IMAGE_FILE_BLOCK_6_220Wx120H:END@@IMAGE_FILE_BLOCK_6_300Wx180H:START@
+					;$variant6ImageName300Wx180H.png  	;@IMAGE_FILE_BLOCK_6_300Wx180H:END@@IMAGE_FILE_BLOCK_6_30Wx32H:START@
+					;$variant6ImageName30Wx32H.png  	;@IMAGE_FILE_BLOCK_6_30Wx32H:END@@IMAGE_FILE_BLOCK_6_300Wx300H_1:START@@IMAGE_DETAIL_NUMBER_1:START@
+					;$variant6ImageName300Wx300H_1.png  ;@IMAGE_DETAIL_NUMBER_1:END@@IMAGE_DETAIL_NUMBER_2:START@
+					;$variant6ImageName300Wx300H_2.png  ;@IMAGE_DETAIL_NUMBER_2:END@@IMAGE_DETAIL_NUMBER_3:START@
+					;$variant6ImageName300Wx300H_3.png  ;@IMAGE_DETAIL_NUMBER_3:END@@IMAGE_FILE_BLOCK_6_300Wx300H_1:END@									
+REMOVE 			MediaContainer	;qualifier[unique=true]				;$catalogVersion						
+								;$variant6ImageName1_container		;@IMAGE_FILE_BLOCK_6_96Wx96H_1:START@$variant6ImageName96Wx96H_1.png, @IMAGE_FILE_BLOCK_6_96Wx96H_1:END@$variant6ImageName300Wx300H_1.png;@IMAGE_DETAIL_NUMBER_2:START@
+								;$variant6ImageName2_container		;@IMAGE_FILE_BLOCK_6_96Wx96H_1:START@$variant6ImageName96Wx96H_2.png, @IMAGE_FILE_BLOCK_6_96Wx96H_1:END@$variant6ImageName300Wx300H_2.png, $variant6ImageName300Wx300H_1.png@IMAGE_FILE_BLOCK_6_96Wx96H_1:START@, $variant6ImageName96Wx96H_1.png@IMAGE_FILE_BLOCK_6_96Wx96H_1:END@;@IMAGE_DETAIL_NUMBER_2:END@@IMAGE_DETAIL_NUMBER_3:START@		
+								;$variant6ImageName3_container		;@IMAGE_FILE_BLOCK_6_96Wx96H_1:START@$variant6ImageName96Wx96H_3.png, @IMAGE_FILE_BLOCK_6_96Wx96H_1:END@$variant6ImageName300Wx300H_3.png, $variant6ImageName300Wx300H_1.png@IMAGE_FILE_BLOCK_6_96Wx96H_1:START@, $variant6ImageName96Wx96H_1.png@IMAGE_FILE_BLOCK_6_96Wx96H_1:END@;@IMAGE_DETAIL_NUMBER_3:END@
+								;$variant6ImageNamecontainer		;$variant6ImageName125Wx90H.png, $variant6ImageName128Wx114H.png, $variant6ImageName128Wx85H.png, $variant6ImageName130Wx130H.png, $variant6ImageName130Wx80H.png, $variant6ImageName138Wx80H.png, $variant6ImageName164Wx115H.png, $variant6ImageName220Wx120H.png, $variant6ImageName300Wx180H.png, $variant6ImageName30Wx32H.png, $variant6ImageName300Wx300H_1.png@IMAGE_FILE_BLOCK_6_96Wx96H_1:START@, $variant6ImageName96Wx96H_1.png@IMAGE_FILE_BLOCK_6_96Wx96H_1:END@;
+									
+REMOVE 	 ElectronicsColorVariantProduct ;code[unique=true]; $catalogVersion	; 
+										;$variant6Code     ;               	;@VARIANT6:END@
+@VARIANT7:START@
+
+##################### Insert Media ##################
+# VARIAN @VARIANT_7_CODE@
+REMOVE 		Media	;code[unique=true]	  				;$catalogVersion@IMAGE_FILE_BLOCK_7_96Wx96H_1:START@@IMAGE_DETAIL_NUMBER_1:START@
+					;$variant7ImageName96Wx96H_1.png  	;@IMAGE_DETAIL_NUMBER_1:END@@IMAGE_DETAIL_NUMBER_2:START@
+					;$variant7ImageName96Wx96H_2.png  	;@IMAGE_DETAIL_NUMBER_2:END@@IMAGE_DETAIL_NUMBER_3:START@
+					;$variant7ImageName96Wx96H_3.png  	;@IMAGE_DETAIL_NUMBER_3:END@@IMAGE_FILE_BLOCK_7_96Wx96H_1:END@@IMAGE_FILE_BLOCK_7_125Wx90H:START@
+					;$variant7ImageName125Wx90H.png  	;@IMAGE_FILE_BLOCK_7_125Wx90H:END@@IMAGE_FILE_BLOCK_7_128Wx114H:START@
+					;$variant7ImageName128Wx114H.png  	;@IMAGE_FILE_BLOCK_7_128Wx114H:END@@IMAGE_FILE_BLOCK_7_128Wx85H:START@
+					;$variant7ImageName128Wx85H.png  	;@IMAGE_FILE_BLOCK_7_128Wx85H:END@@IMAGE_FILE_BLOCK_7_130Wx130H:START@
+					;$variant7ImageName130Wx130H.png  	;@IMAGE_FILE_BLOCK_7_130Wx130H:END@@IMAGE_FILE_BLOCK_7_130Wx80H:START@
+					;$variant7ImageName130Wx80H.png  	;@IMAGE_FILE_BLOCK_7_130Wx80H:END@@IMAGE_FILE_BLOCK_7_138Wx80H:START@
+					;$variant7ImageName138Wx80H.png  	;@IMAGE_FILE_BLOCK_7_138Wx80H:END@@IMAGE_FILE_BLOCK_7_164Wx115H:START@
+					;$variant7ImageName164Wx115H.png  	;@IMAGE_FILE_BLOCK_7_164Wx115H:END@@IMAGE_FILE_BLOCK_7_220Wx120H:START@
+					;$variant7ImageName220Wx120H.png  	;@IMAGE_FILE_BLOCK_7_220Wx120H:END@@IMAGE_FILE_BLOCK_7_300Wx180H:START@
+					;$variant7ImageName300Wx180H.png  	;@IMAGE_FILE_BLOCK_7_300Wx180H:END@@IMAGE_FILE_BLOCK_7_30Wx32H:START@
+					;$variant7ImageName30Wx32H.png  	;@IMAGE_FILE_BLOCK_7_30Wx32H:END@@IMAGE_FILE_BLOCK_7_300Wx300H_1:START@@IMAGE_DETAIL_NUMBER_1:START@
+					;$variant7ImageName300Wx300H_1.png  ;@IMAGE_DETAIL_NUMBER_1:END@@IMAGE_DETAIL_NUMBER_2:START@
+					;$variant7ImageName300Wx300H_2.png  ;@IMAGE_DETAIL_NUMBER_2:END@@IMAGE_DETAIL_NUMBER_3:START@
+					;$variant7ImageName300Wx300H_3.png  ;@IMAGE_DETAIL_NUMBER_3:END@@IMAGE_FILE_BLOCK_7_300Wx300H_1:END@									
+REMOVE 			MediaContainer	;qualifier[unique=true]				;$catalogVersion						
+								;$variant7ImageName1_container		;@IMAGE_FILE_BLOCK_7_96Wx96H_1:START@$variant7ImageName96Wx96H_1.png, @IMAGE_FILE_BLOCK_7_96Wx96H_1:END@$variant7ImageName300Wx300H_1.png;@IMAGE_DETAIL_NUMBER_2:START@
+								;$variant7ImageName2_container		;@IMAGE_FILE_BLOCK_7_96Wx96H_1:START@$variant7ImageName96Wx96H_2.png, @IMAGE_FILE_BLOCK_7_96Wx96H_1:END@$variant7ImageName300Wx300H_2.png, $variant7ImageName300Wx300H_1.png@IMAGE_FILE_BLOCK_7_96Wx96H_1:START@, $variant7ImageName96Wx96H_1.png@IMAGE_FILE_BLOCK_7_96Wx96H_1:END@;@IMAGE_DETAIL_NUMBER_2:END@@IMAGE_DETAIL_NUMBER_3:START@		
+								;$variant7ImageName3_container		;@IMAGE_FILE_BLOCK_7_96Wx96H_1:START@$variant7ImageName96Wx96H_3.png, @IMAGE_FILE_BLOCK_7_96Wx96H_1:END@$variant7ImageName300Wx300H_3.png, $variant7ImageName300Wx300H_1.png@IMAGE_FILE_BLOCK_7_96Wx96H_1:START@, $variant7ImageName96Wx96H_1.png@IMAGE_FILE_BLOCK_7_96Wx96H_1:END@;@IMAGE_DETAIL_NUMBER_3:END@
+								;$variant7ImageNamecontainer		;$variant7ImageName125Wx90H.png, $variant7ImageName128Wx114H.png, $variant7ImageName128Wx85H.png, $variant7ImageName130Wx130H.png, $variant7ImageName130Wx80H.png, $variant7ImageName138Wx80H.png, $variant7ImageName164Wx115H.png, $variant7ImageName220Wx120H.png, $variant7ImageName300Wx180H.png, $variant7ImageName30Wx32H.png, $variant7ImageName300Wx300H_1.png@IMAGE_FILE_BLOCK_7_96Wx96H_1:START@, $variant7ImageName96Wx96H_1.png@IMAGE_FILE_BLOCK_7_96Wx96H_1:END@;
+									
+REMOVE 	 ElectronicsColorVariantProduct ;code[unique=true]; $catalogVersion	; 
+										;$variant7Code     ;               	;@VARIANT7:END@
+@VARIANT8:START@
+
+##################### Insert Media ##################
+# VARIAN @VARIANT_8_CODE@
+REMOVE 		Media	;code[unique=true]	  				;$catalogVersion@IMAGE_FILE_BLOCK_8_96Wx96H_1:START@@IMAGE_DETAIL_NUMBER_1:START@
+					;$variant8ImageName96Wx96H_1.png  	;@IMAGE_DETAIL_NUMBER_1:END@@IMAGE_DETAIL_NUMBER_2:START@
+					;$variant8ImageName96Wx96H_2.png  	;@IMAGE_DETAIL_NUMBER_2:END@@IMAGE_DETAIL_NUMBER_3:START@
+					;$variant8ImageName96Wx96H_3.png  	;@IMAGE_DETAIL_NUMBER_3:END@@IMAGE_FILE_BLOCK_8_96Wx96H_1:END@@IMAGE_FILE_BLOCK_8_125Wx90H:START@
+					;$variant8ImageName125Wx90H.png  	;@IMAGE_FILE_BLOCK_8_125Wx90H:END@@IMAGE_FILE_BLOCK_8_128Wx114H:START@
+					;$variant8ImageName128Wx114H.png  	;@IMAGE_FILE_BLOCK_8_128Wx114H:END@@IMAGE_FILE_BLOCK_8_128Wx85H:START@
+					;$variant8ImageName128Wx85H.png  	;@IMAGE_FILE_BLOCK_8_128Wx85H:END@@IMAGE_FILE_BLOCK_8_130Wx130H:START@
+					;$variant8ImageName130Wx130H.png  	;@IMAGE_FILE_BLOCK_8_130Wx130H:END@@IMAGE_FILE_BLOCK_8_130Wx80H:START@
+					;$variant8ImageName130Wx80H.png  	;@IMAGE_FILE_BLOCK_8_130Wx80H:END@@IMAGE_FILE_BLOCK_8_138Wx80H:START@
+					;$variant8ImageName138Wx80H.png  	;@IMAGE_FILE_BLOCK_8_138Wx80H:END@@IMAGE_FILE_BLOCK_8_164Wx115H:START@
+					;$variant8ImageName164Wx115H.png  	;@IMAGE_FILE_BLOCK_8_164Wx115H:END@@IMAGE_FILE_BLOCK_8_220Wx120H:START@
+					;$variant8ImageName220Wx120H.png  	;@IMAGE_FILE_BLOCK_8_220Wx120H:END@@IMAGE_FILE_BLOCK_8_300Wx180H:START@
+					;$variant8ImageName300Wx180H.png  	;@IMAGE_FILE_BLOCK_8_300Wx180H:END@@IMAGE_FILE_BLOCK_8_30Wx32H:START@
+					;$variant8ImageName30Wx32H.png  	;@IMAGE_FILE_BLOCK_8_30Wx32H:END@@IMAGE_FILE_BLOCK_8_300Wx300H_1:START@@IMAGE_DETAIL_NUMBER_1:START@
+					;$variant8ImageName300Wx300H_1.png  ;@IMAGE_DETAIL_NUMBER_1:END@@IMAGE_DETAIL_NUMBER_2:START@
+					;$variant8ImageName300Wx300H_2.png  ;@IMAGE_DETAIL_NUMBER_2:END@@IMAGE_DETAIL_NUMBER_3:START@
+					;$variant8ImageName300Wx300H_3.png  ;@IMAGE_DETAIL_NUMBER_3:END@@IMAGE_FILE_BLOCK_8_300Wx300H_1:END@									
+REMOVE 			MediaContainer	;qualifier[unique=true]				;$catalogVersion						
+								;$variant8ImageName1_container		;@IMAGE_FILE_BLOCK_8_96Wx96H_1:START@$variant8ImageName96Wx96H_1.png, @IMAGE_FILE_BLOCK_8_96Wx96H_1:END@$variant8ImageName300Wx300H_1.png;@IMAGE_DETAIL_NUMBER_2:START@
+								;$variant8ImageName2_container		;@IMAGE_FILE_BLOCK_8_96Wx96H_1:START@$variant8ImageName96Wx96H_2.png, @IMAGE_FILE_BLOCK_8_96Wx96H_1:END@$variant8ImageName300Wx300H_2.png, $variant8ImageName300Wx300H_1.png@IMAGE_FILE_BLOCK_8_96Wx96H_1:START@, $variant8ImageName96Wx96H_1.png@IMAGE_FILE_BLOCK_8_96Wx96H_1:END@;@IMAGE_DETAIL_NUMBER_2:END@@IMAGE_DETAIL_NUMBER_3:START@		
+								;$variant8ImageName3_container		;@IMAGE_FILE_BLOCK_8_96Wx96H_1:START@$variant8ImageName96Wx96H_3.png, @IMAGE_FILE_BLOCK_8_96Wx96H_1:END@$variant8ImageName300Wx300H_3.png, $variant8ImageName300Wx300H_1.png@IMAGE_FILE_BLOCK_8_96Wx96H_1:START@, $variant8ImageName96Wx96H_1.png@IMAGE_FILE_BLOCK_8_96Wx96H_1:END@;@IMAGE_DETAIL_NUMBER_3:END@
+								;$variant8ImageNamecontainer		;$variant8ImageName125Wx90H.png, $variant8ImageName128Wx114H.png, $variant8ImageName128Wx85H.png, $variant8ImageName130Wx130H.png, $variant8ImageName130Wx80H.png, $variant8ImageName138Wx80H.png, $variant8ImageName164Wx115H.png, $variant8ImageName220Wx120H.png, $variant8ImageName300Wx180H.png, $variant8ImageName30Wx32H.png, $variant8ImageName300Wx300H_1.png@IMAGE_FILE_BLOCK_8_96Wx96H_1:START@, $variant8ImageName96Wx96H_1.png@IMAGE_FILE_BLOCK_8_96Wx96H_1:END@;
+									
+REMOVE 	 ElectronicsColorVariantProduct ;code[unique=true]; $catalogVersion	; 
+										;$variant8Code     ;               	;@VARIANT8:END@

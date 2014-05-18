@@ -1,0 +1,356 @@
+$version=Staged
+$ElectronicsColorVariantProductType=@ELECTRONICS_COLOR_VARIANT_PRODUCT_TYPE@
+$super_categories=@SUPER_CATEGORIES@
+$saleStatus=@SALE_STATUS@
+
+$variantNumber=@VARIANT_NUMBER@
+$imageDetailNumber=@IMAGE_DETAIL_NUMBER@
+# ImpEx for Importing Products into Electronics Store
+
+# Macros / Replacement Parameter definitions
+$productCatalog=msscnProductCatalog
+$productCatalogName=Microsoft Product Catalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='$version'])[unique=true,default=$productCatalog:$version]
+$supercategories=supercategories(code, $catalogVersion)
+$baseProduct=baseProduct(code,$catalogVersion)
+$approved=approvalstatus(code)[default='approved']
+$offlineDate = 31.12.9999 23:59
+$onlineDate = 04.11.2013 23:59
+$lang=zh
+
+# Import config properties into impex macros
+UPDATE GenericItem[processor=de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor];pk[unique=true];;
+
+# Load the storefront context root config param
+$P_THEME_RESOURCE_PATH=$config-impex.static.image.path
+
+$media=@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
+$thumbnail=thumbnail(code, $catalogVersion)
+$picture=picture(code, $catalogVersion)
+$thumbnails=thumbnails(code, $catalogVersion)
+$detail=detail(code, $catalogVersion)
+$normal=normal(code, $catalogVersion)
+$others=others(code, $catalogVersion)
+$data_sheet=data_sheet(code, $catalogVersion)
+$medias=medias(code, $catalogVersion)
+$galleryImages=galleryImages(qualifier, $catalogVersion)
+$siteResource=jar:com.microsoft.store.cn.initialdata.setup.InitialDataSystemSetup&/msscninitialdata/import/productCatalogs/$productCatalog
+$productCatalog=msscnProductCatalog
+$productCatalogName=Microsoft Product Catalog
+
+$prices=Europe1prices[translator=de.hybris.platform.europe1.jalo.impex.Europe1PricesTranslator]
+$taxGroup=
+
+# Set product approval status to Approved only for those products that have prices.
+$approved=approvalstatus(code)[default='approved']
+$wasPrice=@wasPrice[translator=com.microsoft.store.cn.core.impex.translator.ProductWasPriceTranslator]
+
+$vendor=default
+$colorSwatch=colorSwatch(code, $catalogVersion)
+
+
+$baseProductCode=@BASE_PRODUCT_CODE@
+$baseProductName=@BASE_PRODUCT_NAME@
+$baseProductPrices=@BASE_PRODUCT_PRICES@
+$baseProductWasPrices=@BASE_PRODUCT_WAS_PRICES@
+@VARIANT1:START@
+
+$variant1Code=@VARIANT_1_CODE@
+$variant1Name=@VARIANT_1_NAME@
+$variant1Prices=@VARIANT_1_PRICES@
+$variant1WasPrices=@VARIANT_1_WAS_PRICES@
+$variant1ImageName=@VARIANT_1_IMAGE_NAME@
+$variant1promotionText=@VARIANT_1_PROMOTION_TEXT@
+$variant1Summary=@VARIANT_1_SUMMARY@
+$variant1SummaryRichText=@VARIANT_1_SUMMARY_RICH_TEXT@@VARIANT1:END@@VARIANT2:START@
+
+$variant2Code=@VARIANT_2_CODE@
+$variant2Name=@VARIANT_2_NAME@
+$variant2Prices=@VARIANT_2_PRICES@
+$variant2WasPrices=@VARIANT_2_WAS_PRICES@
+$variant2ImageName=@VARIANT_2_IMAGE_NAME@
+$variant2promotionText=@VARIANT_2_PROMOTION_TEXT@
+$variant2Summary=@VARIANT_2_SUMMARY@
+$variant2SummaryRichText=@VARIANT_2_SUMMARY_RICH_TEXT@@VARIANT2:END@@VARIANT3:START@
+
+$variant3Code=@VARIANT_3_CODE@
+$variant3Name=@VARIANT_3_NAME@
+$variant3Prices=@VARIANT_3_PRICES@
+$variant3WasPrices=@VARIANT_3_WAS_PRICES@
+$variant3ImageName=@VARIANT_3_IMAGE_NAME@
+$variant3promotionText=@VARIANT_3_PROMOTION_TEXT@
+$variant3Summary=@VARIANT_3_SUMMARY@
+$variant3SummaryRichText=@VARIANT_3_SUMMARY_RICH_TEXT@@VARIANT3:END@@VARIANT4:START@
+
+$variant4Code=@VARIANT_4_CODE@
+$variant4Name=@VARIANT_4_NAME@
+$variant4Prices=@VARIANT_4_PRICES@
+$variant4WasPrices=@VARIANT_4_WAS_PRICES@
+$variant4ImageName=@VARIANT_4_IMAGE_NAME@
+$variant4promotionText=@VARIANT_4_PROMOTION_TEXT@
+$variant4Summary=@VARIANT_4_SUMMARY@
+$variant4SummaryRichText=@VARIANT_4_SUMMARY_RICH_TEXT@@VARIANT4:END@@VARIANT5:START@
+
+$variant5Code=@VARIANT_5_CODE@
+$variant5Name=@VARIANT_5_NAME@
+$variant5Prices=@VARIANT_5_PRICES@
+$variant5WasPrices=@VARIANT_5_WAS_PRICES@
+$variant5ImageName=@VARIANT_5_IMAGE_NAME@
+$variant5promotionText=@VARIANT_5_PROMOTION_TEXT@
+$variant5Summary=@VARIANT_5_SUMMARY@
+$variant5SummaryRichText=@VARIANT_5_SUMMARY_RICH_TEXT@@VARIANT5:END@@VARIANT6:START@
+
+$variant6Code=@VARIANT_6_CODE@
+$variant6Name=@VARIANT_6_NAME@
+$variant6Prices=@VARIANT_6_PRICES@
+$variant6WasPrices=@VARIANT_6_WAS_PRICES@
+$variant6ImageName=@VARIANT_6_IMAGE_NAME@
+$variant6promotionText=@VARIANT_6_PROMOTION_TEXT@
+$variant6Summary=@VARIANT_6_SUMMARY@
+$variant6SummaryRichText=@VARIANT_6_SUMMARY_RICH_TEXT@@VARIANT6:END@@VARIANT7:START@
+
+$variant7Code=@VARIANT_7_CODE@
+$variant7Name=@VARIANT_7_NAME@
+$variant7Prices=@VARIANT_7_PRICES@
+$variant7WasPrices=@VARIANT_7_WAS_PRICES@
+$variant7ImageName=@VARIANT_7_IMAGE_NAME@
+$variant7promotionText=@VARIANT_7_PROMOTION_TEXT@
+$variant7Summary=@VARIANT_7_SUMMARY@
+$variant7SummaryRichText=@VARIANT_7_SUMMARY_RICH_TEXT@@VARIANT7:END@@VARIANT8:START@
+
+$variant8Code=@VARIANT_8_CODE@
+$variant8Name=@VARIANT_8_NAME@
+$variant8Prices=@VARIANT_8_PRICES@
+$variant8WasPrices=@VARIANT_8_WAS_PRICES@
+$variant8ImageName=@VARIANT_8_IMAGE_NAME@
+$variant8promotionText=@VARIANT_8_PROMOTION_TEXT@
+$variant8Summary=@VARIANT_8_SUMMARY@
+$variant8SummaryRichText=@VARIANT_8_SUMMARY_RICH_TEXT@@VARIANT8:END@@VARIANT9:START@
+
+$variant9Code=@VARIANT_9_CODE@
+$variant9Name=@VARIANT_9_NAME@
+$variant9Prices=@VARIANT_9_PRICES@
+$variant9WasPrices=@VARIANT_9_WAS_PRICES@
+$variant9ImageName=@VARIANT_9_IMAGE_NAME@
+$variant9promotionText=@VARIANT_9_PROMOTION_TEXT@
+$variant9Summary=@VARIANT_9_SUMMARY@
+$variant9SummaryRichText=@VARIANT_9_SUMMARY_RICH_TEXT@@VARIANT9:END@@VARIANT10:START@
+
+$variant10Code=@VARIANT_10_CODE@
+$variant10Name=@VARIANT_10_NAME@
+$variant10Prices=@VARIANT_10_PRICES@
+$variant10WasPrices=@VARIANT_10_WAS_PRICES@
+$variant10ImageName=@VARIANT_10_IMAGE_NAME@
+$variant10promotionText=@VARIANT_10_PROMOTION_TEXT@
+$variant10Summary=@VARIANT_10_SUMMARY@
+$variant10SummaryRichText=@VARIANT_10_SUMMARY_RICH_TEXT@@VARIANT10:END@@VARIANT11:START@
+
+$variant11Code=@VARIANT_11_CODE@
+$variant11Name=@VARIANT_11_NAME@
+$variant11Prices=@VARIANT_11_PRICES@
+$variant11WasPrices=@VARIANT_11_WAS_PRICES@
+$variant11ImageName=@VARIANT_11_IMAGE_NAME@
+$variant11promotionText=@VARIANT_11_PROMOTION_TEXT@
+$variant11Summary=@VARIANT_11_SUMMARY@
+$variant11SummaryRichText=@VARIANT_11_SUMMARY_RICH_TEXT@@VARIANT11:END@@VARIANT12:START@
+
+$variant12Code=@VARIANT_12_CODE@
+$variant12Name=@VARIANT_12_NAME@
+$variant12Prices=@VARIANT_12_PRICES@
+$variant12WasPrices=@VARIANT_12_WAS_PRICES@
+$variant12ImageName=@VARIANT_12_IMAGE_NAME@
+$variant12promotionText=@VARIANT_12_PROMOTION_TEXT@
+$variant12Summary=@VARIANT_12_SUMMARY@
+$variant12SummaryRichText=@VARIANT_12_SUMMARY_RICH_TEXT@@VARIANT12:END@@VARIANT13:START@
+
+$variant13Code=@VARIANT_13_CODE@
+$variant13Name=@VARIANT_13_NAME@
+$variant13Prices=@VARIANT_13_PRICES@
+$variant13WasPrices=@VARIANT_13_WAS_PRICES@
+$variant13ImageName=@VARIANT_13_IMAGE_NAME@
+$variant13promotionText=@VARIANT_13_PROMOTION_TEXT@
+$variant13Summary=@VARIANT_13_SUMMARY@
+$variant13SummaryRichText=@VARIANT_13_SUMMARY_RICH_TEXT@@VARIANT13:END@@VARIANT14:START@
+
+$variant14Code=@VARIANT_14_CODE@
+$variant14Name=@VARIANT_14_NAME@
+$variant14Prices=@VARIANT_14_PRICES@
+$variant14WasPrices=@VARIANT_14_WAS_PRICES@
+$variant14ImageName=@VARIANT_14_IMAGE_NAME@
+$variant14promotionText=@VARIANT_14_PROMOTION_TEXT@
+$variant14Summary=@VARIANT_14_SUMMARY@
+$variant14SummaryRichText=@VARIANT_14_SUMMARY_RICH_TEXT@@VARIANT14:END@@VARIANT15:START@
+
+$variant15Code=@VARIANT_15_CODE@
+$variant15Name=@VARIANT_15_NAME@
+$variant15Prices=@VARIANT_15_PRICES@
+$variant15WasPrices=@VARIANT_15_WAS_PRICES@
+$variant15ImageName=@VARIANT_15_IMAGE_NAME@
+$variant15promotionText=@VARIANT_15_PROMOTION_TEXT@
+$variant15Summary=@VARIANT_15_SUMMARY@
+$variant15SummaryRichText=@VARIANT_15_SUMMARY_RICH_TEXT@@VARIANT15:END@@VARIANT16:START@
+
+$variant16Code=@VARIANT_16_CODE@
+$variant16Name=@VARIANT_16_NAME@
+$variant16Prices=@VARIANT_16_PRICES@
+$variant16WasPrices=@VARIANT_16_WAS_PRICES@
+$variant16ImageName=@VARIANT_16_IMAGE_NAME@
+$variant16promotionText=@VARIANT_16_PROMOTION_TEXT@
+$variant16Summary=@VARIANT_16_SUMMARY@
+$variant16SummaryRichText=@VARIANT_16_SUMMARY_RICH_TEXT@@VARIANT16:END@@VARIANT17:START@
+
+$variant17Code=@VARIANT_17_CODE@
+$variant17Name=@VARIANT_17_NAME@
+$variant17Prices=@VARIANT_17_PRICES@
+$variant17WasPrices=@VARIANT_17_WAS_PRICES@
+$variant17ImageName=@VARIANT_17_IMAGE_NAME@
+$variant17promotionText=@VARIANT_17_PROMOTION_TEXT@
+$variant17Summary=@VARIANT_17_SUMMARY@
+$variant17SummaryRichText=@VARIANT_17_SUMMARY_RICH_TEXT@@VARIANT17:END@@VARIANT18:START@
+
+$variant18Code=@VARIANT_18_CODE@
+$variant18Name=@VARIANT_18_NAME@
+$variant18Prices=@VARIANT_18_PRICES@
+$variant18WasPrices=@VARIANT_18_WAS_PRICES@
+$variant18ImageName=@VARIANT_18_IMAGE_NAME@
+$variant18promotionText=@VARIANT_18_PROMOTION_TEXT@
+$variant18Summary=@VARIANT_18_SUMMARY@
+$variant18SummaryRichText=@VARIANT_18_SUMMARY_RICH_TEXT@@VARIANT18:END@@VARIANT19:START@
+
+$variant19Code=@VARIANT_19_CODE@
+$variant19Name=@VARIANT_19_NAME@
+$variant19Prices=@VARIANT_19_PRICES@
+$variant19WasPrices=@VARIANT_19_WAS_PRICES@
+$variant19ImageName=@VARIANT_19_IMAGE_NAME@
+$variant19promotionText=@VARIANT_19_PROMOTION_TEXT@
+$variant19Summary=@VARIANT_19_SUMMARY@
+$variant19SummaryRichText=@VARIANT_19_SUMMARY_RICH_TEXT@@VARIANT19:END@@VARIANT20:START@
+
+$variant20Code=@VARIANT_20_CODE@
+$variant20Name=@VARIANT_20_NAME@
+$variant20Prices=@VARIANT_20_PRICES@
+$variant20WasPrices=@VARIANT_20_WAS_PRICES@
+$variant20ImageName=@VARIANT_20_IMAGE_NAME@
+$variant20promotionText=@VARIANT_20_PROMOTION_TEXT@
+$variant20Summary=@VARIANT_20_SUMMARY@
+$variant20SummaryRichText=@VARIANT_20_SUMMARY_RICH_TEXT@@VARIANT20:END@
+
+##############################################################################################
+#################################    VARIANT-END       #######################################
+##############################################################################################
+
+##############################################################################################
+########################### @BASE_PRODUCT_CODE@		@VARIANT1:START@
+###########################		@VARIANT_1_CODE@	@VARIANT1:END@@VARIANT2:START@
+###########################		@VARIANT_2_CODE@	@VARIANT2:END@@VARIANT3:START@
+###########################		@VARIANT_3_CODE@	@VARIANT3:END@@VARIANT4:START@
+###########################		@VARIANT_4_CODE@	@VARIANT4:END@@VARIANT5:START@
+###########################		@VARIANT_5_CODE@	@VARIANT5:END@@VARIANT6:START@
+###########################		@VARIANT_6_CODE@	@VARIANT6:END@@VARIANT7:START@
+###########################		@VARIANT_7_CODE@	@VARIANT7:END@@VARIANT8:START@
+###########################		@VARIANT_8_CODE@	@VARIANT8:END@@VARIANT9:START@
+###########################		@VARIANT_9_CODE@	@VARIANT9:END@@VARIANT10:START@
+###########################		@VARIANT_10_CODE@	@VARIANT10:END@@VARIANT11:START@
+###########################		@VARIANT_11_CODE@	@VARIANT11:END@@VARIANT12:START@
+###########################		@VARIANT_12_CODE@	@VARIANT12:END@@VARIANT13:START@
+###########################		@VARIANT_13_CODE@	@VARIANT13:END@@VARIANT14:START@
+###########################		@VARIANT_14_CODE@	@VARIANT14:END@@VARIANT15:START@
+###########################		@VARIANT_15_CODE@	@VARIANT15:END@@VARIANT16:START@
+###########################		@VARIANT_16_CODE@	@VARIANT16:END@@VARIANT17:START@
+###########################		@VARIANT_17_CODE@	@VARIANT17:END@@VARIANT18:START@
+###########################		@VARIANT_18_CODE@	@VARIANT18:END@@VARIANT19:START@
+###########################		@VARIANT_19_CODE@	@VARIANT19:END@@VARIANT20:START@
+###########################		@VARIANT_20_CODE@	@VARIANT20:END@
+##############################################################################################
+
+UPDATE 	Product	;code[unique=true]		;$catalogVersion	;name[lang=$lang]				;summary[lang=$lang]
+				;$baseProductCode		;					;$baseProductName				;$variant1Summary						
+
+UPDATE 	Product	;code[unique=true] 	;$catalogVersion	;name[lang=$lang]			;summary[lang=$lang]	;promotionText[lang=$lang]	;@VARIANT1:START@
+				;$variant1Code		;					;$baseProductName			;$variant1Summary		;$variant1promotionText;	;@VARIANT1:END@@VARIANT2:START@
+				;$variant2Code		;					;$baseProductName			;$variant2Summary		;$variant2promotionText;	;@VARIANT2:END@@VARIANT3:START@
+				;$variant3Code		;					;$baseProductName			;$variant3Summary		;$variant3promotionText;	;@VARIANT3:END@@VARIANT4:START@
+				;$variant4Code		;					;$baseProductName			;$variant4Summary		;$variant4promotionText;	;@VARIANT4:END@@VARIANT5:START@
+				;$variant5Code		;					;$baseProductName			;$variant5Summary		;$variant5promotionText;	;@VARIANT5:END@@VARIANT6:START@
+				;$variant6Code		;					;$baseProductName			;$variant6Summary		;$variant6promotionText;	;@VARIANT6:END@@VARIANT7:START@
+				;$variant7Code		;					;$baseProductName			;$variant7Summary		;$variant7promotionText;	;@VARIANT7:END@@VARIANT8:START@
+				;$variant8Code		;					;$baseProductName			;$variant8Summary		;$variant8promotionText;	;@VARIANT8:END@@VARIANT9:START@
+				;$variant9Code		;					;$baseProductName			;$variant9Summary		;$variant9promotionText;	;@VARIANT9:END@@VARIANT10:START@
+				;$variant10Code		;					;$baseProductName			;$variant10Summary		;$variant10promotionText;	;@VARIANT10:END@@VARIANT11:START@
+				;$variant11Code		;					;$baseProductName			;$variant11Summary		;$variant11promotionText;	;@VARIANT11:END@@VARIANT12:START@
+				;$variant12Code		;					;$baseProductName			;$variant12Summary		;$variant12promotionText;	;@VARIANT12:END@@VARIANT13:START@
+				;$variant13Code		;					;$baseProductName			;$variant13Summary		;$variant13promotionText;	;@VARIANT13:END@@VARIANT14:START@
+				;$variant14Code		;					;$baseProductName			;$variant14Summary		;$variant14promotionText;	;@VARIANT14:END@@VARIANT15:START@
+				;$variant15Code		;					;$baseProductName			;$variant15Summary		;$variant15promotionText;	;@VARIANT15:END@@VARIANT16:START@
+				;$variant16Code		;					;$baseProductName			;$variant16Summary		;$variant16promotionText;	;@VARIANT16:END@@VARIANT17:START@
+				;$variant17Code		;					;$baseProductName			;$variant17Summary		;$variant17promotionText;	;@VARIANT17:END@@VARIANT18:START@
+				;$variant18Code		;					;$baseProductName			;$variant18Summary		;$variant18promotionText;	;@VARIANT18:END@@VARIANT19:START@
+				;$variant19Code		;					;$baseProductName			;$variant19Summary		;$variant19promotionText;	;@VARIANT19:END@@VARIANT20:START@
+				;$variant20Code		;					;$baseProductName			;$variant20Summary		;$variant20promotionText;	;@VARIANT20:END@
+		
+UPDATE Product	;code[unique=true]	;$prices			;$wasPrice			;$approved	;$catalogVersion	;$taxGroup	;maxorderquantity 
+				;$baseProductCode	;$baseProductPrices	;$baseProductWasPrices	;			;					;			;@VARIANT1:START@
+				;$variant1Code		;$variant1Prices	;$variant1WasPrices	;			;					;			;5@VARIANT1:END@@VARIANT2:START@
+				;$variant2Code		;$variant2Prices	;$variant2WasPrices	;			;					;			;5@VARIANT2:END@@VARIANT3:START@
+				;$variant3Code		;$variant3Prices	;$variant3WasPrices	;			;					;			;5@VARIANT3:END@@VARIANT4:START@
+				;$variant4Code		;$variant4Prices	;$variant4WasPrices	;			;					;			;5@VARIANT4:END@@VARIANT5:START@
+				;$variant5Code		;$variant5Prices	;$variant5WasPrices	;			;					;			;5@VARIANT5:END@@VARIANT6:START@
+				;$variant6Code		;$variant6Prices	;$variant6WasPrices	;			;					;			;5@VARIANT6:END@@VARIANT7:START@
+				;$variant7Code		;$variant7Prices	;$variant7WasPrices	;			;					;			;5@VARIANT7:END@@VARIANT8:START@
+				;$variant8Code		;$variant8Prices	;$variant8WasPrices	;			;					;			;5@VARIANT8:END@@VARIANT9:START@
+				;$variant9Code		;$variant9Prices	;$variant9WasPrices	;			;					;			;5@VARIANT9:END@@VARIANT10:START@
+				;$variant10Code		;$variant10Prices	;$variant10WasPrices	;			;					;			;5@VARIANT10:END@@VARIANT11:START@
+				;$variant11Code		;$variant11Prices	;$variant11WasPrices	;			;					;			;5@VARIANT11:END@@VARIANT12:START@
+				;$variant12Code		;$variant12Prices	;$variant12WasPrices	;			;					;			;5@VARIANT12:END@@VARIANT13:START@
+				;$variant13Code		;$variant13Prices	;$variant13WasPrices	;			;					;			;5@VARIANT13:END@@VARIANT14:START@
+				;$variant14Code		;$variant14Prices	;$variant14WasPrices	;			;					;			;5@VARIANT14:END@@VARIANT15:START@
+				;$variant15Code		;$variant15Prices	;$variant15WasPrices	;			;					;			;5@VARIANT15:END@@VARIANT16:START@
+				;$variant16Code		;$variant16Prices	;$variant16WasPrices	;			;					;			;5@VARIANT16:END@@VARIANT17:START@
+				;$variant17Code		;$variant17Prices	;$variant17WasPrices	;			;					;			;5@VARIANT17:END@@VARIANT18:START@
+				;$variant18Code		;$variant18Prices	;$variant18WasPrices	;			;					;			;5@VARIANT18:END@@VARIANT19:START@
+				;$variant19Code		;$variant19Prices	;$variant19WasPrices	;			;					;			;5@VARIANT19:END@@VARIANT20:START@
+				;$variant20Code		;$variant20Prices	;$variant20WasPrices	;			;					;			;5@VARIANT20:END@
+				
+INSERT_UPDATE StockLevel	;available	;warehouse(code)[unique=true]	;inStockStatus(code)	;maxPreOrder	;maxStockLevelHistoryCount	;overSelling	;preOrder	;productCode[unique=true]	;reserved@VARIANT1:START@
+							;100000		;warehouse_e					;notSpecified			;1				;-1							;0				;0			;$variant1Code				;0@VARIANT1:END@@VARIANT2:START@
+							;100000		;warehouse_e					;notSpecified			;1				;-1							;0				;0			;$variant2Code				;0@VARIANT2:END@@VARIANT3:START@
+							;100000		;warehouse_e					;notSpecified			;1				;-1							;0				;0			;$variant3Code				;0@VARIANT3:END@@VARIANT4:START@
+							;100000		;warehouse_e					;notSpecified			;1				;-1							;0				;0			;$variant4Code				;0@VARIANT4:END@@VARIANT5:START@
+							;100000		;warehouse_e					;notSpecified			;1				;-1							;0				;0			;$variant5Code				;0@VARIANT5:END@@VARIANT6:START@
+							;100000		;warehouse_e					;notSpecified			;1				;-1							;0				;0			;$variant6Code				;0@VARIANT6:END@@VARIANT7:START@
+							;100000		;warehouse_e					;notSpecified			;1				;-1							;0				;0			;$variant7Code				;0@VARIANT7:END@@VARIANT8:START@
+							;100000		;warehouse_e					;notSpecified			;1				;-1							;0				;0			;$variant8Code				;0@VARIANT8:END@@VARIANT9:START@
+							;100000		;warehouse_e					;notSpecified			;1				;-1							;0				;0			;$variant9Code				;0@VARIANT9:END@@VARIANT10:START@
+							;100000		;warehouse_e					;notSpecified			;1				;-1							;0				;0			;$variant10Code				;0@VARIANT10:END@@VARIANT11:START@
+							;100000		;warehouse_e					;notSpecified			;1				;-1							;0				;0			;$variant11Code				;0@VARIANT11:END@@VARIANT12:START@
+							;100000		;warehouse_e					;notSpecified			;1				;-1							;0				;0			;$variant12Code				;0@VARIANT12:END@@VARIANT13:START@
+							;100000		;warehouse_e					;notSpecified			;1				;-1							;0				;0			;$variant13Code				;0@VARIANT13:END@@VARIANT14:START@
+							;100000		;warehouse_e					;notSpecified			;1				;-1							;0				;0			;$variant14Code				;0@VARIANT14:END@@VARIANT15:START@
+							;100000		;warehouse_e					;notSpecified			;1				;-1							;0				;0			;$variant15Code				;0@VARIANT15:END@@VARIANT16:START@
+							;100000		;warehouse_e					;notSpecified			;1				;-1							;0				;0			;$variant16Code				;0@VARIANT16:END@@VARIANT17:START@
+							;100000		;warehouse_e					;notSpecified			;1				;-1							;0				;0			;$variant17Code				;0@VARIANT17:END@@VARIANT18:START@
+							;100000		;warehouse_e					;notSpecified			;1				;-1							;0				;0			;$variant18Code				;0@VARIANT18:END@@VARIANT19:START@
+							;100000		;warehouse_e					;notSpecified			;1				;-1							;0				;0			;$variant19Code				;0@VARIANT19:END@@VARIANT20:START@
+							;100000		;warehouse_e					;notSpecified			;1				;-1							;0				;0			;$variant20Code				;0@VARIANT20:END@
+	
+UPDATE Product	;code[unique=true]	;$catalogVersion	;stockLevels(productCode,warehouse(code))	;vendors(code)@VARIANT1:START@
+				;$variant1Code		;					;$variant1Code:warehouse_e						;$vendor@VARIANT1:END@@VARIANT2:START@
+				;$variant2Code		;					;$variant2Code:warehouse_e						;$vendor@VARIANT2:END@@VARIANT3:START@
+				;$variant3Code		;					;$variant3Code:warehouse_e						;$vendor@VARIANT3:END@@VARIANT4:START@
+				;$variant4Code		;					;$variant4Code:warehouse_e						;$vendor@VARIANT4:END@@VARIANT5:START@
+				;$variant5Code		;					;$variant5Code:warehouse_e						;$vendor@VARIANT5:END@@VARIANT6:START@
+				;$variant6Code		;					;$variant6Code:warehouse_e						;$vendor@VARIANT6:END@@VARIANT7:START@
+				;$variant7Code		;					;$variant7Code:warehouse_e						;$vendor@VARIANT7:END@@VARIANT8:START@
+				;$variant8Code		;					;$variant8Code:warehouse_e						;$vendor@VARIANT8:END@@VARIANT9:START@
+				;$variant9Code		;					;$variant9Code:warehouse_e						;$vendor@VARIANT9:END@@VARIANT10:START@
+				;$variant10Code		;					;$variant10Code:warehouse_e						;$vendor@VARIANT10:END@@VARIANT11:START@
+				;$variant11Code		;					;$variant11Code:warehouse_e						;$vendor@VARIANT11:END@@VARIANT12:START@
+				;$variant12Code		;					;$variant12Code:warehouse_e						;$vendor@VARIANT12:END@@VARIANT13:START@
+				;$variant13Code		;					;$variant13Code:warehouse_e						;$vendor@VARIANT13:END@@VARIANT14:START@
+				;$variant14Code		;					;$variant14Code:warehouse_e						;$vendor@VARIANT14:END@@VARIANT15:START@
+				;$variant15Code		;					;$variant15Code:warehouse_e						;$vendor@VARIANT15:END@@VARIANT16:START@
+				;$variant16Code		;					;$variant16Code:warehouse_e						;$vendor@VARIANT16:END@@VARIANT17:START@
+				;$variant17Code		;					;$variant17Code:warehouse_e						;$vendor@VARIANT17:END@@VARIANT18:START@
+				;$variant18Code		;					;$variant18Code:warehouse_e						;$vendor@VARIANT18:END@@VARIANT19:START@
+				;$variant19Code		;					;$variant19Code:warehouse_e						;$vendor@VARIANT19:END@@VARIANT20:START@
+				;$variant20Code		;					;$variant20Code:warehouse_e						;$vendor@VARIANT20:END@
