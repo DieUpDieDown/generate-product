@@ -34,7 +34,7 @@ $others=others(code, $catalogVersion)
 $data_sheet=data_sheet(code, $catalogVersion)
 $medias=medias(code, $catalogVersion)
 $galleryImages=galleryImages(qualifier, $catalogVersion)
-$siteResource=jar:com.microsoft.store.cn.initialdata.setup.InitialDataSystemSetup&/msscninitialdata/import/productCatalogs/$productCatalog
+$siteResource=jar:com.microsoft.store.cn.initialdata.setup.InitialDataSystemSetup&/releases/productCatalogs/msscnProductCatalog/@DEPLOY_VERSION@/images
 $productCatalog=msscnProductCatalog
 $productCatalogName=Microsoft Product Catalog
 
