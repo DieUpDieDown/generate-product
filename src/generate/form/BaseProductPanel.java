@@ -80,10 +80,10 @@ public class BaseProductPanel extends JPanel {
 
 		JTextFieldMultiSelectReplace tfSuperCategory = new JTextFieldMultiSelectReplace();
 		tfSuperCategory.setName("tfSuperCategory");
-		tfSuperCategory.setModel(new String[] { "accessories",
-				"surface_accessories", "special_offer", "surface",
-				"window_phone", "office", "webcam", "office_product", "phone",
-				"external-product" });
+		tfSuperCategory.setModel(new String[] { "accessories", "special_offer",
+				"computer", "surface", "phone", "webcam",
+				"surface_accessories", "window_phone", "office",
+				"office_product", "laptop", "tablet", "external-product" });
 		tfSuperCategory.setEditable(false);
 		tfSuperCategory.setFindText("@SUPER_CATEGORIES@");
 		GridBagConstraints gbc_tfSuperCategory = new GridBagConstraints();
@@ -209,8 +209,7 @@ public class BaseProductPanel extends JPanel {
 				"@VARIANT17:START@(.*?)@VARIANT17:END@",
 				"@VARIANT18:START@(.*?)@VARIANT18:END@",
 				"@VARIANT19:START@(.*?)@VARIANT19:END@",
-				"@VARIANT20:START@(.*?)@VARIANT20:END@"
-				});
+				"@VARIANT20:START@(.*?)@VARIANT20:END@" });
 		GridBagConstraints gbc_cbbNumberVariant = new GridBagConstraints();
 		gbc_cbbNumberVariant.insets = new Insets(0, 0, 5, 0);
 		gbc_cbbNumberVariant.fill = GridBagConstraints.HORIZONTAL;
@@ -245,8 +244,7 @@ public class BaseProductPanel extends JPanel {
 				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
 				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
 				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@"
-				});
+				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@" });
 		cbbNumberImageDetail
 				.setFindTexts(new String[] {
 						"@IMAGE_DETAIL_NUMBER_1:START@(.*?)@IMAGE_DETAIL_NUMBER_1:END@",
@@ -264,8 +262,7 @@ public class BaseProductPanel extends JPanel {
 						"@IMAGE_DETAIL_NUMBER_13:START@(.*?)@IMAGE_DETAIL_NUMBER_13:END@",
 						"@IMAGE_DETAIL_NUMBER_14:START@(.*?)@IMAGE_DETAIL_NUMBER_14:END@",
 						"@IMAGE_DETAIL_NUMBER_15:START@(.*?)@IMAGE_DETAIL_NUMBER_15:END@",
-						"@IMAGE_DETAIL_NUMBER_16:START@(.*?)@IMAGE_DETAIL_NUMBER_16:END@"
-						});
+						"@IMAGE_DETAIL_NUMBER_16:START@(.*?)@IMAGE_DETAIL_NUMBER_16:END@" });
 		GridBagConstraints gbc_cbbNumberImageDetail = new GridBagConstraints();
 		gbc_cbbNumberImageDetail.insets = new Insets(0, 0, 5, 0);
 		gbc_cbbNumberImageDetail.fill = GridBagConstraints.HORIZONTAL;

@@ -46,10 +46,10 @@ public class ConfigPanel extends JPanel {
 		add(panelConfigCenter, BorderLayout.NORTH);
 		GridBagLayout gbl_panelConfigCenter = new GridBagLayout();
 		gbl_panelConfigCenter.columnWidths = new int[] { 0, 0, 0 };
-		gbl_panelConfigCenter.rowHeights = new int[] { 0, 0, 0, 0, 0 };
+		gbl_panelConfigCenter.rowHeights = new int[] { 0, 0, 0, 0, 0, 0 };
 		gbl_panelConfigCenter.columnWeights = new double[] { 0.0, 1.0,
 				Double.MIN_VALUE };
-		gbl_panelConfigCenter.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0,
+		gbl_panelConfigCenter.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0,
 				Double.MIN_VALUE };
 		panelConfigCenter.setLayout(gbl_panelConfigCenter);
 
@@ -132,13 +132,32 @@ public class ConfigPanel extends JPanel {
 		gbc_tfDesktopStaticImageFolder.gridy = 2;
 		panelConfigCenter.add(tfDesktopStaticImageFolder,
 				gbc_tfDesktopStaticImageFolder);
+		
+		JLabel lblDeployVersion = new JLabel("Deploy version");
+		GridBagConstraints gbc_lblDeployVersion = new GridBagConstraints();
+		gbc_lblDeployVersion.insets = new Insets(0, 0, 5, 5);
+		gbc_lblDeployVersion.anchor = GridBagConstraints.EAST;
+		gbc_lblDeployVersion.gridx = 0;
+		gbc_lblDeployVersion.gridy = 3;
+		panelConfigCenter.add(lblDeployVersion, gbc_lblDeployVersion);
+		
+		JTextFieldReplace tfDeployVersion = new JTextFieldReplace();
+		tfDeployVersion.setIsAllowSaveConfig(true);
+		tfDeployVersion.setFindText("@DEPLOY_VERSION@");
+		tfDeployVersion.setName("tfDeployVersion");
+		GridBagConstraints gbc_tfDeployVersion = new GridBagConstraints();
+		gbc_tfDeployVersion.insets = new Insets(0, 0, 5, 0);
+		gbc_tfDeployVersion.fill = GridBagConstraints.HORIZONTAL;
+		gbc_tfDeployVersion.gridx = 1;
+		gbc_tfDeployVersion.gridy = 3;
+		panelConfigCenter.add(tfDeployVersion, gbc_tfDeployVersion);
 
 		JLabel lblDateNow = new JLabel("Date now");
 		GridBagConstraints gbc_lblDateNow = new GridBagConstraints();
 		gbc_lblDateNow.insets = new Insets(0, 0, 0, 5);
 		gbc_lblDateNow.anchor = GridBagConstraints.EAST;
 		gbc_lblDateNow.gridx = 0;
-		gbc_lblDateNow.gridy = 3;
+		gbc_lblDateNow.gridy = 4;
 		panelConfigCenter.add(lblDateNow, gbc_lblDateNow);
 
 		tfDateNow = new JTextFieldReplace();
@@ -150,7 +169,7 @@ public class ConfigPanel extends JPanel {
 		GridBagConstraints gbc_tfDateNow = new GridBagConstraints();
 		gbc_tfDateNow.fill = GridBagConstraints.HORIZONTAL;
 		gbc_tfDateNow.gridx = 1;
-		gbc_tfDateNow.gridy = 3;
+		gbc_tfDateNow.gridy = 4;
 		panelConfigCenter.add(tfDateNow, gbc_tfDateNow);
 
 		JTabbedPane tabbedPaneLog = new JTabbedPane(JTabbedPane.TOP);

@@ -83,7 +83,7 @@ public class MainFrame extends JFrame {
 		tabbedPane.addTab("Variant 10", null, variantPanel10, null);
 		tabbedPane.setEnabledAt(11, false);
 
-		/*VariantPanel variantPanel11 = new VariantPanel(11);
+		VariantPanel variantPanel11 = new VariantPanel(11);
 		variantPanel11.setReference(new String[] { "cbbNumberVariant" });
 		tabbedPane.addTab("Variant 11", null, variantPanel11, null);
 		tabbedPane.setEnabledAt(12, false);
@@ -113,7 +113,7 @@ public class MainFrame extends JFrame {
 		tabbedPane.addTab("Variant 16", null, variantPanel16, null);
 		tabbedPane.setEnabledAt(17, false);
 
-		VariantPanel variantPanel17 = new VariantPanel(17);
+		/*VariantPanel variantPanel17 = new VariantPanel(17);
 		variantPanel17.setReference(new String[] { "cbbNumberVariant" });
 		tabbedPane.addTab("Variant 17", null, variantPanel17, null);
 		tabbedPane.setEnabledAt(18, false);
