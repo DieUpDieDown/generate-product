@@ -43,7 +43,7 @@ public class BaseProductPanel extends JPanel {
 		panel_1.setLayout(gbl_panel_1);
 
 		JLabel lblElectronicscolorvariantproducttype = new JLabel(
-				"Electronics color variant product type");
+				Messages.getString("BaseProductPanel.0")); //$NON-NLS-1$
 		GridBagConstraints gbc_lblElectronicscolorvariantproducttype = new GridBagConstraints();
 		gbc_lblElectronicscolorvariantproducttype.insets = new Insets(0, 0, 5,
 				5);
@@ -55,14 +55,14 @@ public class BaseProductPanel extends JPanel {
 
 		JComboboxReplace cbbElectonicVariantProductType = new JComboboxReplace();
 		cbbElectonicVariantProductType
-				.setName("cbbElectonicVariantProductType");
+				.setName(Messages.getString("BaseProductPanel.1")); //$NON-NLS-1$
 		cbbElectonicVariantProductType
-				.setFindText("@ELECTRONICS_COLOR_VARIANT_PRODUCT_TYPE@");
+				.setFindText(Messages.getString("BaseProductPanel.2")); //$NON-NLS-1$
 		cbbElectonicVariantProductType
 				.setModel(new DefaultComboBoxModel<String>(new String[] {
-						"ACCESSORY", "COMPUTER", "OFFICE", "SOFTWARE",
-						"SURFACE", "SURFACE_2", "SURFACE_CN_2", "WINDOWPHONE",
-						"WINDOWS", "WINDOWS_8", "GENERAL_PRODUCT" }));
+						Messages.getString("BaseProductPanel.3"), Messages.getString("BaseProductPanel.4"), Messages.getString("BaseProductPanel.5"), Messages.getString("BaseProductPanel.6"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+						Messages.getString("BaseProductPanel.7"), Messages.getString("BaseProductPanel.8"), Messages.getString("BaseProductPanel.9"), Messages.getString("BaseProductPanel.10"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+						Messages.getString("BaseProductPanel.11"), Messages.getString("BaseProductPanel.12"), Messages.getString("BaseProductPanel.13") })); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		GridBagConstraints gbc_cbbVariantProductType = new GridBagConstraints();
 		gbc_cbbVariantProductType.insets = new Insets(0, 0, 5, 0);
 		gbc_cbbVariantProductType.fill = GridBagConstraints.HORIZONTAL;
@@ -70,7 +70,7 @@ public class BaseProductPanel extends JPanel {
 		gbc_cbbVariantProductType.gridy = 0;
 		panel_1.add(cbbElectonicVariantProductType, gbc_cbbVariantProductType);
 
-		JLabel lblSuperCategory = new JLabel("Super category");
+		JLabel lblSuperCategory = new JLabel(Messages.getString("BaseProductPanel.14")); //$NON-NLS-1$
 		GridBagConstraints gbc_lblSuperCategory = new GridBagConstraints();
 		gbc_lblSuperCategory.anchor = GridBagConstraints.EAST;
 		gbc_lblSuperCategory.insets = new Insets(0, 0, 5, 5);
@@ -79,13 +79,13 @@ public class BaseProductPanel extends JPanel {
 		panel_1.add(lblSuperCategory, gbc_lblSuperCategory);
 
 		JTextFieldMultiSelectReplace tfSuperCategory = new JTextFieldMultiSelectReplace();
-		tfSuperCategory.setName("tfSuperCategory");
-		tfSuperCategory.setModel(new String[] { "accessories", "special_offer",
-				"computer", "surface", "phone", "webcam",
-				"surface_accessories", "window_phone", "office",
-				"office_product", "laptop", "tablet", "external-product" });
+		tfSuperCategory.setName(Messages.getString("BaseProductPanel.15")); //$NON-NLS-1$
+		tfSuperCategory.setModel(new String[] { Messages.getString("BaseProductPanel.16"), Messages.getString("BaseProductPanel.17"), //$NON-NLS-1$ //$NON-NLS-2$
+				Messages.getString("BaseProductPanel.18"), Messages.getString("BaseProductPanel.19"), Messages.getString("BaseProductPanel.20"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				Messages.getString("BaseProductPanel.21"), Messages.getString("BaseProductPanel.22"), Messages.getString("BaseProductPanel.23"), Messages.getString("BaseProductPanel.24"), Messages.getString("BaseProductPanel.25"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+				Messages.getString("BaseProductPanel.26"), Messages.getString("BaseProductPanel.27"), Messages.getString("BaseProductPanel.28") }); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		tfSuperCategory.setEditable(false);
-		tfSuperCategory.setFindText("@SUPER_CATEGORIES@");
+		tfSuperCategory.setFindText(Messages.getString("BaseProductPanel.29")); //$NON-NLS-1$
 		GridBagConstraints gbc_tfSuperCategory = new GridBagConstraints();
 		gbc_tfSuperCategory.insets = new Insets(0, 0, 5, 0);
 		gbc_tfSuperCategory.fill = GridBagConstraints.HORIZONTAL;
@@ -93,7 +93,7 @@ public class BaseProductPanel extends JPanel {
 		gbc_tfSuperCategory.gridy = 1;
 		panel_1.add(tfSuperCategory, gbc_tfSuperCategory);
 
-		JLabel lblSaleStatus = new JLabel("Sale status");
+		JLabel lblSaleStatus = new JLabel(Messages.getString("BaseProductPanel.30")); //$NON-NLS-1$
 		GridBagConstraints gbc_lblSaleStatus = new GridBagConstraints();
 		gbc_lblSaleStatus.insets = new Insets(0, 0, 5, 5);
 		gbc_lblSaleStatus.anchor = GridBagConstraints.EAST;
@@ -102,10 +102,10 @@ public class BaseProductPanel extends JPanel {
 		panel_1.add(lblSaleStatus, gbc_lblSaleStatus);
 
 		JComboboxReplace cbbSaleStatus = new JComboboxReplace();
-		cbbSaleStatus.setName("cbbSaleStatus");
-		cbbSaleStatus.setFindText("@SALE_STATUS@");
+		cbbSaleStatus.setName(Messages.getString("BaseProductPanel.31")); //$NON-NLS-1$
+		cbbSaleStatus.setFindText(Messages.getString("BaseProductPanel.32")); //$NON-NLS-1$
 		cbbSaleStatus.setModel(new DefaultComboBoxModel<String>(new String[] {
-				"FOR_SALE", "MARKETING", "COMMING_SOON", "PREORDER" }));
+				Messages.getString("BaseProductPanel.33"), Messages.getString("BaseProductPanel.34"), Messages.getString("BaseProductPanel.35"), Messages.getString("BaseProductPanel.36") })); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 		GridBagConstraints gbc_cbbSaleStatus = new GridBagConstraints();
 		gbc_cbbSaleStatus.insets = new Insets(0, 0, 5, 0);
 		gbc_cbbSaleStatus.fill = GridBagConstraints.HORIZONTAL;
@@ -113,7 +113,7 @@ public class BaseProductPanel extends JPanel {
 		gbc_cbbSaleStatus.gridy = 2;
 		panel_1.add(cbbSaleStatus, gbc_cbbSaleStatus);
 
-		JLabel lblVariantType = new JLabel("Variant type");
+		JLabel lblVariantType = new JLabel(Messages.getString("BaseProductPanel.37")); //$NON-NLS-1$
 		GridBagConstraints gbc_lblVariantType = new GridBagConstraints();
 		gbc_lblVariantType.insets = new Insets(0, 0, 5, 5);
 		gbc_lblVariantType.anchor = GridBagConstraints.EAST;
@@ -122,12 +122,12 @@ public class BaseProductPanel extends JPanel {
 		panel_1.add(lblVariantType, gbc_lblVariantType);
 
 		JComboboxReplace cbbVariantType = new JComboboxReplace();
-		cbbVariantType.setName("cbbVariantType");
-		cbbVariantType.setFindText("@VARIANT_TYPE@");
+		cbbVariantType.setName(Messages.getString("BaseProductPanel.38")); //$NON-NLS-1$
+		cbbVariantType.setFindText(Messages.getString("BaseProductPanel.39")); //$NON-NLS-1$
 		cbbVariantType.setModel(new DefaultComboBoxModel<String>(new String[] {
-				"ElectronicsColorVariantProduct", "ApparelSizeVariantProduct",
-				"ApparelStyleVariantProduct", "VariantProduct",
-				"VersionVariantProduct" }));
+				Messages.getString("BaseProductPanel.40"), Messages.getString("BaseProductPanel.41"), //$NON-NLS-1$ //$NON-NLS-2$
+				Messages.getString("BaseProductPanel.42"), Messages.getString("BaseProductPanel.43"), //$NON-NLS-1$ //$NON-NLS-2$
+				Messages.getString("BaseProductPanel.44") })); //$NON-NLS-1$
 		GridBagConstraints gbc_cbbVariantType = new GridBagConstraints();
 		gbc_cbbVariantType.insets = new Insets(0, 0, 5, 0);
 		gbc_cbbVariantType.fill = GridBagConstraints.HORIZONTAL;
@@ -135,7 +135,7 @@ public class BaseProductPanel extends JPanel {
 		gbc_cbbVariantType.gridy = 3;
 		panel_1.add(cbbVariantType, gbc_cbbVariantType);
 
-		JLabel lblProductType = new JLabel("Product type");
+		JLabel lblProductType = new JLabel(Messages.getString("BaseProductPanel.45")); //$NON-NLS-1$
 		GridBagConstraints gbc_lblProductType = new GridBagConstraints();
 		gbc_lblProductType.insets = new Insets(0, 0, 5, 5);
 		gbc_lblProductType.anchor = GridBagConstraints.EAST;
@@ -144,12 +144,12 @@ public class BaseProductPanel extends JPanel {
 		panel_1.add(lblProductType, gbc_lblProductType);
 
 		JComboboxReplace cbbProductType = new JComboboxReplace();
-		cbbProductType.setName("cbbProductType");
-		cbbProductType.setFindText("@PRODUCT_TYPE@");
+		cbbProductType.setName(Messages.getString("BaseProductPanel.46")); //$NON-NLS-1$
+		cbbProductType.setFindText(Messages.getString("BaseProductPanel.47")); //$NON-NLS-1$
 		cbbProductType.setModel(new DefaultComboBoxModel<String>(new String[] {
-				"ACCESSORY", "COMPUTER", "OFFICE", "SOFTWARE", "SURFACE",
-				"SURFACE_2", "SURFACE_CN_2", "WINDOWPHONE", "WINDOWS",
-				"WINDOWS_8", "GENERAL_PRODUCT" }));
+				Messages.getString("BaseProductPanel.48"), Messages.getString("BaseProductPanel.49"), Messages.getString("BaseProductPanel.50"), Messages.getString("BaseProductPanel.51"), Messages.getString("BaseProductPanel.52"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+				Messages.getString("BaseProductPanel.53"), Messages.getString("BaseProductPanel.54"), Messages.getString("BaseProductPanel.55"), Messages.getString("BaseProductPanel.56"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+				Messages.getString("BaseProductPanel.57"), Messages.getString("BaseProductPanel.58") })); //$NON-NLS-1$ //$NON-NLS-2$
 		GridBagConstraints gbc_cbbProductType = new GridBagConstraints();
 		gbc_cbbProductType.insets = new Insets(0, 0, 5, 0);
 		gbc_cbbProductType.fill = GridBagConstraints.HORIZONTAL;
@@ -157,7 +157,7 @@ public class BaseProductPanel extends JPanel {
 		gbc_cbbProductType.gridy = 4;
 		panel_1.add(cbbProductType, gbc_cbbProductType);
 
-		JLabel lbVariantNumber = new JLabel("Variant number");
+		JLabel lbVariantNumber = new JLabel(Messages.getString("BaseProductPanel.59")); //$NON-NLS-1$
 		GridBagConstraints gbc_lbVariantNumber = new GridBagConstraints();
 		gbc_lbVariantNumber.insets = new Insets(0, 0, 5, 5);
 		gbc_lbVariantNumber.anchor = GridBagConstraints.EAST;
@@ -167,49 +167,49 @@ public class BaseProductPanel extends JPanel {
 
 		JComboboxNumberFlagReplace cbbNumberVariant = new JComboboxNumberFlagReplace(
 				1, 20);
-		cbbNumberVariant.setName("cbbNumberVariant");
+		cbbNumberVariant.setName(Messages.getString("BaseProductPanel.60")); //$NON-NLS-1$
 		cbbNumberVariant.setReplaceTexts(new String[] {
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@" });
+				Messages.getString("BaseProductPanel.61"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.62"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.63"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.64"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.65"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.66"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.67"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.68"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.69"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.70"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.71"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.72"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.73"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.74"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.75"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.76"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.77"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.78"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.79"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.80") }); //$NON-NLS-1$
 		cbbNumberVariant.setFindTexts(new String[] {
-				"@VARIANT1:START@(.*?)@VARIANT1:END@",
-				"@VARIANT2:START@(.*?)@VARIANT2:END@",
-				"@VARIANT3:START@(.*?)@VARIANT3:END@",
-				"@VARIANT4:START@(.*?)@VARIANT4:END@",
-				"@VARIANT5:START@(.*?)@VARIANT5:END@",
-				"@VARIANT6:START@(.*?)@VARIANT6:END@",
-				"@VARIANT7:START@(.*?)@VARIANT7:END@",
-				"@VARIANT8:START@(.*?)@VARIANT8:END@",
-				"@VARIANT9:START@(.*?)@VARIANT9:END@",
-				"@VARIANT10:START@(.*?)@VARIANT10:END@",
-				"@VARIANT11:START@(.*?)@VARIANT11:END@",
-				"@VARIANT12:START@(.*?)@VARIANT12:END@",
-				"@VARIANT13:START@(.*?)@VARIANT13:END@",
-				"@VARIANT14:START@(.*?)@VARIANT14:END@",
-				"@VARIANT15:START@(.*?)@VARIANT15:END@",
-				"@VARIANT16:START@(.*?)@VARIANT16:END@",
-				"@VARIANT17:START@(.*?)@VARIANT17:END@",
-				"@VARIANT18:START@(.*?)@VARIANT18:END@",
-				"@VARIANT19:START@(.*?)@VARIANT19:END@",
-				"@VARIANT20:START@(.*?)@VARIANT20:END@" });
+				Messages.getString("BaseProductPanel.81"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.82"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.83"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.84"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.85"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.86"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.87"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.88"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.89"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.90"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.91"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.92"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.93"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.94"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.95"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.96"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.97"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.98"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.99"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.100") }); //$NON-NLS-1$
 		GridBagConstraints gbc_cbbNumberVariant = new GridBagConstraints();
 		gbc_cbbNumberVariant.insets = new Insets(0, 0, 5, 0);
 		gbc_cbbNumberVariant.fill = GridBagConstraints.HORIZONTAL;
@@ -217,7 +217,7 @@ public class BaseProductPanel extends JPanel {
 		gbc_cbbNumberVariant.gridy = 5;
 		panel_1.add(cbbNumberVariant, gbc_cbbNumberVariant);
 
-		JLabel lbImageDetailNumber = new JLabel("Image detail number");
+		JLabel lbImageDetailNumber = new JLabel(Messages.getString("BaseProductPanel.101")); //$NON-NLS-1$
 		GridBagConstraints gbc_lbImageDetailNumber = new GridBagConstraints();
 		gbc_lbImageDetailNumber.insets = new Insets(0, 0, 5, 5);
 		gbc_lbImageDetailNumber.anchor = GridBagConstraints.EAST;
@@ -227,42 +227,42 @@ public class BaseProductPanel extends JPanel {
 
 		JComboboxNumberFlagReplace cbbNumberImageDetail = new JComboboxNumberFlagReplace(
 				1, 16);
-		cbbNumberImageDetail.setName("cbbNumberImageDetail");
+		cbbNumberImageDetail.setName(Messages.getString("BaseProductPanel.102")); //$NON-NLS-1$
 		cbbNumberImageDetail.setReplaceTexts(new String[] {
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@",
-				"@TRUE:START@$1@TRUE:END@@FALSE:START@@FALSE:END@" });
+				Messages.getString("BaseProductPanel.103"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.104"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.105"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.106"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.107"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.108"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.109"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.110"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.111"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.112"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.113"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.114"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.115"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.116"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.117"), //$NON-NLS-1$
+				Messages.getString("BaseProductPanel.118") }); //$NON-NLS-1$
 		cbbNumberImageDetail
 				.setFindTexts(new String[] {
-						"@IMAGE_DETAIL_NUMBER_1:START@(.*?)@IMAGE_DETAIL_NUMBER_1:END@",
-						"@IMAGE_DETAIL_NUMBER_2:START@(.*?)@IMAGE_DETAIL_NUMBER_2:END@",
-						"@IMAGE_DETAIL_NUMBER_3:START@(.*?)@IMAGE_DETAIL_NUMBER_3:END@",
-						"@IMAGE_DETAIL_NUMBER_4:START@(.*?)@IMAGE_DETAIL_NUMBER_4:END@",
-						"@IMAGE_DETAIL_NUMBER_5:START@(.*?)@IMAGE_DETAIL_NUMBER_5:END@",
-						"@IMAGE_DETAIL_NUMBER_6:START@(.*?)@IMAGE_DETAIL_NUMBER_6:END@",
-						"@IMAGE_DETAIL_NUMBER_7:START@(.*?)@IMAGE_DETAIL_NUMBER_7:END@",
-						"@IMAGE_DETAIL_NUMBER_8:START@(.*?)@IMAGE_DETAIL_NUMBER_8:END@",
-						"@IMAGE_DETAIL_NUMBER_9:START@(.*?)@IMAGE_DETAIL_NUMBER_9:END@",
-						"@IMAGE_DETAIL_NUMBER_10:START@(.*?)@IMAGE_DETAIL_NUMBER_10:END@",
-						"@IMAGE_DETAIL_NUMBER_11:START@(.*?)@IMAGE_DETAIL_NUMBER_11:END@",
-						"@IMAGE_DETAIL_NUMBER_12:START@(.*?)@IMAGE_DETAIL_NUMBER_12:END@",
-						"@IMAGE_DETAIL_NUMBER_13:START@(.*?)@IMAGE_DETAIL_NUMBER_13:END@",
-						"@IMAGE_DETAIL_NUMBER_14:START@(.*?)@IMAGE_DETAIL_NUMBER_14:END@",
-						"@IMAGE_DETAIL_NUMBER_15:START@(.*?)@IMAGE_DETAIL_NUMBER_15:END@",
-						"@IMAGE_DETAIL_NUMBER_16:START@(.*?)@IMAGE_DETAIL_NUMBER_16:END@" });
+						Messages.getString("BaseProductPanel.119"), //$NON-NLS-1$
+						Messages.getString("BaseProductPanel.120"), //$NON-NLS-1$
+						Messages.getString("BaseProductPanel.121"), //$NON-NLS-1$
+						Messages.getString("BaseProductPanel.122"), //$NON-NLS-1$
+						Messages.getString("BaseProductPanel.123"), //$NON-NLS-1$
+						Messages.getString("BaseProductPanel.124"), //$NON-NLS-1$
+						Messages.getString("BaseProductPanel.125"), //$NON-NLS-1$
+						Messages.getString("BaseProductPanel.126"), //$NON-NLS-1$
+						Messages.getString("BaseProductPanel.127"), //$NON-NLS-1$
+						Messages.getString("BaseProductPanel.128"), //$NON-NLS-1$
+						Messages.getString("BaseProductPanel.129"), //$NON-NLS-1$
+						Messages.getString("BaseProductPanel.130"), //$NON-NLS-1$
+						Messages.getString("BaseProductPanel.131"), //$NON-NLS-1$
+						Messages.getString("BaseProductPanel.132"), //$NON-NLS-1$
+						Messages.getString("BaseProductPanel.133"), //$NON-NLS-1$
+						Messages.getString("BaseProductPanel.134") }); //$NON-NLS-1$
 		GridBagConstraints gbc_cbbNumberImageDetail = new GridBagConstraints();
 		gbc_cbbNumberImageDetail.insets = new Insets(0, 0, 5, 0);
 		gbc_cbbNumberImageDetail.fill = GridBagConstraints.HORIZONTAL;
@@ -270,7 +270,7 @@ public class BaseProductPanel extends JPanel {
 		gbc_cbbNumberImageDetail.gridy = 6;
 		panel_1.add(cbbNumberImageDetail, gbc_cbbNumberImageDetail);
 
-		JLabel lbBaseProductName = new JLabel("Base product name");
+		JLabel lbBaseProductName = new JLabel(Messages.getString("BaseProductPanel.135")); //$NON-NLS-1$
 		GridBagConstraints gbc_lbBaseProductName = new GridBagConstraints();
 		gbc_lbBaseProductName.insets = new Insets(0, 0, 5, 5);
 		gbc_lbBaseProductName.anchor = GridBagConstraints.EAST;
@@ -279,8 +279,8 @@ public class BaseProductPanel extends JPanel {
 		panel_1.add(lbBaseProductName, gbc_lbBaseProductName);
 
 		JTextFieldReplace tfBaseProductName = new JTextFieldReplace();
-		tfBaseProductName.setName("tfBaseProductName");
-		tfBaseProductName.setFindText("@BASE_PRODUCT_NAME@");
+		tfBaseProductName.setName(Messages.getString("BaseProductPanel.136")); //$NON-NLS-1$
+		tfBaseProductName.setFindText(Messages.getString("BaseProductPanel.137")); //$NON-NLS-1$
 		GridBagConstraints gbc_tfBaseProductName = new GridBagConstraints();
 		gbc_tfBaseProductName.insets = new Insets(0, 0, 5, 0);
 		gbc_tfBaseProductName.fill = GridBagConstraints.HORIZONTAL;
@@ -288,7 +288,7 @@ public class BaseProductPanel extends JPanel {
 		gbc_tfBaseProductName.gridy = 7;
 		panel_1.add(tfBaseProductName, gbc_tfBaseProductName);
 
-		JLabel lbBaseProductCode = new JLabel("Base product code");
+		JLabel lbBaseProductCode = new JLabel(Messages.getString("BaseProductPanel.138")); //$NON-NLS-1$
 		GridBagConstraints gbc_lbBaseProductCode = new GridBagConstraints();
 		gbc_lbBaseProductCode.insets = new Insets(0, 0, 5, 5);
 		gbc_lbBaseProductCode.anchor = GridBagConstraints.EAST;
@@ -297,8 +297,8 @@ public class BaseProductPanel extends JPanel {
 		panel_1.add(lbBaseProductCode, gbc_lbBaseProductCode);
 
 		JTextFieldReplace tfBaseProductCode = new JTextFieldReplace();
-		tfBaseProductCode.setName("tfBaseProductCode");
-		tfBaseProductCode.setFindText("@BASE_PRODUCT_CODE@");
+		tfBaseProductCode.setName(Messages.getString("BaseProductPanel.139")); //$NON-NLS-1$
+		tfBaseProductCode.setFindText(Messages.getString("BaseProductPanel.140")); //$NON-NLS-1$
 		GridBagConstraints gbc_tfBaseProductCode = new GridBagConstraints();
 		gbc_tfBaseProductCode.insets = new Insets(0, 0, 5, 0);
 		gbc_tfBaseProductCode.fill = GridBagConstraints.HORIZONTAL;
@@ -306,7 +306,7 @@ public class BaseProductPanel extends JPanel {
 		gbc_tfBaseProductCode.gridy = 8;
 		panel_1.add(tfBaseProductCode, gbc_tfBaseProductCode);
 
-		JLabel lblBaseProductPrices = new JLabel("Base product prices");
+		JLabel lblBaseProductPrices = new JLabel(Messages.getString("BaseProductPanel.141")); //$NON-NLS-1$
 		GridBagConstraints gbc_lblBaseProductPrices = new GridBagConstraints();
 		gbc_lblBaseProductPrices.insets = new Insets(0, 0, 5, 5);
 		gbc_lblBaseProductPrices.anchor = GridBagConstraints.EAST;
@@ -315,9 +315,9 @@ public class BaseProductPanel extends JPanel {
 		panel_1.add(lblBaseProductPrices, gbc_lblBaseProductPrices);
 
 		JTextFieldReplace tfBaseProductPrice = new JTextFieldReplace();
-		tfBaseProductPrice.setName("tfBaseProductPrice");
-		tfBaseProductPrice.setFindText("@BASE_PRODUCT_PRICES@");
-		tfBaseProductPrice.setText("1 USD, 1 CNY");
+		tfBaseProductPrice.setName(Messages.getString("BaseProductPanel.142")); //$NON-NLS-1$
+		tfBaseProductPrice.setFindText(Messages.getString("BaseProductPanel.143")); //$NON-NLS-1$
+		tfBaseProductPrice.setText(Messages.getString("BaseProductPanel.144")); //$NON-NLS-1$
 		GridBagConstraints gbc_tfBaseProductPrice = new GridBagConstraints();
 		gbc_tfBaseProductPrice.anchor = GridBagConstraints.NORTH;
 		gbc_tfBaseProductPrice.insets = new Insets(0, 0, 5, 0);
@@ -326,7 +326,7 @@ public class BaseProductPanel extends JPanel {
 		gbc_tfBaseProductPrice.gridy = 9;
 		panel_1.add(tfBaseProductPrice, gbc_tfBaseProductPrice);
 
-		JLabel lblBaseProductWas = new JLabel("Base product was prices");
+		JLabel lblBaseProductWas = new JLabel(Messages.getString("BaseProductPanel.145")); //$NON-NLS-1$
 		GridBagConstraints gbc_lblBaseProductWas = new GridBagConstraints();
 		gbc_lblBaseProductWas.insets = new Insets(0, 0, 5, 5);
 		gbc_lblBaseProductWas.anchor = GridBagConstraints.EAST;
@@ -335,8 +335,8 @@ public class BaseProductPanel extends JPanel {
 		panel_1.add(lblBaseProductWas, gbc_lblBaseProductWas);
 
 		JTextFieldReplace tfBaseProductWasPrice = new JTextFieldReplace();
-		tfBaseProductWasPrice.setName("tfBaseProductWasPrice");
-		tfBaseProductWasPrice.setFindText("@BASE_PRODUCT_WAS_PRICES@");
+		tfBaseProductWasPrice.setName(Messages.getString("BaseProductPanel.146")); //$NON-NLS-1$
+		tfBaseProductWasPrice.setFindText(Messages.getString("BaseProductPanel.147")); //$NON-NLS-1$
 		GridBagConstraints gbc_tfBaseProductWasPrice = new GridBagConstraints();
 		gbc_tfBaseProductWasPrice.insets = new Insets(0, 0, 5, 0);
 		gbc_tfBaseProductWasPrice.fill = GridBagConstraints.HORIZONTAL;
@@ -344,7 +344,7 @@ public class BaseProductPanel extends JPanel {
 		gbc_tfBaseProductWasPrice.gridy = 10;
 		panel_1.add(tfBaseProductWasPrice, gbc_tfBaseProductWasPrice);
 
-		JLabel lblNewLabel = new JLabel("Product description");
+		JLabel lblNewLabel = new JLabel(Messages.getString("BaseProductPanel.148")); //$NON-NLS-1$
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.anchor = GridBagConstraints.NORTHEAST;
 		gbc_lblNewLabel.insets = new Insets(0, 0, 0, 5);
@@ -363,38 +363,38 @@ public class BaseProductPanel extends JPanel {
 			private static final long serialVersionUID = 8393977912767032380L;
 
 			public String getReplaceText() {
-				return getText().replace("\\", "\\\\");
+				return getText().replace(Messages.getString("BaseProductPanel.149"), Messages.getString("BaseProductPanel.150")); //$NON-NLS-1$ //$NON-NLS-2$
 			};
 		};
 		txtDescription
-				.setText("<div class=\"key-features-accessory-extra component content-slide\" data-slide=\"keyFeature\">\r\n   <div class=\"content-block clearfix\">\r\n      <h3>主要特点</h3>\r\n      <div class=\"key-feature-content clearfix\">\r\n         </div>\r\n   </div>\r\n</div>");
+				.setText(Messages.getString("BaseProductPanel.151")); //$NON-NLS-1$
 		scrollPane.setViewportView(txtDescription);
 		txtDescription.setLiteral(true);
 		txtDescription.setIsAllowSaveConfig(false);
 		txtDescription.setIsAllowSave(true);
-		txtDescription.setName("txtDescription");
-		txtDescription.setFindText("@PRODUCT_DESCRIPTIONN@");
+		txtDescription.setName(Messages.getString("BaseProductPanel.152")); //$NON-NLS-1$
+		txtDescription.setFindText(Messages.getString("BaseProductPanel.153")); //$NON-NLS-1$
 
 		JPanel panelButtonBar = new JPanel();
 		add(panelButtonBar, BorderLayout.SOUTH);
 
-		JButton btnPreviewDescription = new JButton("Preview description");
+		JButton btnPreviewDescription = new JButton(Messages.getString("BaseProductPanel.154")); //$NON-NLS-1$
 		btnPreviewDescription.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					String productDetailContent = GenerateUtils
-							.readFile("ProductDetail.htm");
+							.readFile(Messages.getString("BaseProductPanel.155")); //$NON-NLS-1$
 					String description = txtDescription.getText();
-					description = description.replaceAll("\\s+src=\"",
-							" src=\".");
+					description = description.replaceAll(Messages.getString("BaseProductPanel.156"), //$NON-NLS-1$
+							Messages.getString("BaseProductPanel.157")); //$NON-NLS-1$
 					GenerateUtils
 							.writeFile(
-									"ProductDetail.htm",
+									Messages.getString("BaseProductPanel.158"), //$NON-NLS-1$
 									productDetailContent
 											.replaceAll(
-													"(?ms)@DESCRIPTION:START@.*@DESCRIPTION:END@",
+													Messages.getString("BaseProductPanel.159"), //$NON-NLS-1$
 													MessageFormat
-															.format("@DESCRIPTION:START@{0}@DESCRIPTION:END@",
+															.format(Messages.getString("BaseProductPanel.160"), //$NON-NLS-1$
 																	description)));
 				} catch (IOException e1) {
 					e1.printStackTrace();

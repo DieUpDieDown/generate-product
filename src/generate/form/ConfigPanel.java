@@ -90,12 +90,10 @@ public class ConfigPanel extends JPanel {
 		tfProductCatalogImage.setIsAllowSaveConfig(false);
 		tfProductCatalogImage.setLiteral(true);
 		tfProductCatalogImage.setFindText("@PRODUCT_CATALOG_IMAGE_FOLER@");
-		tfProductCatalogImage.setReference(new String[] { "tfMscsFolder" });
+		tfProductCatalogImage.setReference(new String[] {"tfMscsFolder", "tfDeployVersion"});
 		tfProductCatalogImage.setStringSource("@MSCS_FOLDER@");
 		tfProductCatalogImage
-				.setTextRuleScript(new String[] {
-						".*",
-						"$0\\\\ext-mss\\\\msscn\\\\msscninitialdata\\\\resources\\\\msscninitialdata\\\\import\\\\productCatalogs\\\\msscnProductCatalog\\\\images" });
+				.setTextRuleScript(new String[] {".*", "$0\\\\ext-mss\\\\msscn\\\\msscninitialdata\\\\resources\\\\msscninitialdata\\\\releases\\\\productCatalogs\\\\msscnProductCatalog\\\\@DEPLOY_VERSION@\\\\images"});
 		tfProductCatalogImage.setName("tfProductCatalogImage");
 		GridBagConstraints gbc_tfProductCatalogImage = new GridBagConstraints();
 		gbc_tfProductCatalogImage.insets = new Insets(0, 0, 5, 0);

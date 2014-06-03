@@ -15,6 +15,9 @@ public class FileUtils {
 		String gitFile = to.getPath().replaceAll("\\\\", "/");
 		gitFile = gitFile.replaceAll(".*/bin/(.+)", "$1");
 		LogUtils.logGit("git add " + gitFile);
+		if (!to.getParentFile().exists()){
+			to.getParentFile().mkdirs();
+		}
 		if (!to.exists()) {
 			to.createNewFile();
 		}

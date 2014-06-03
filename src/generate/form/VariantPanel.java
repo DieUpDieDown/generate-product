@@ -755,7 +755,7 @@ public class VariantPanel extends JPanel implements HasVisiableRule,
 		gbc_image300Wx300H_3.gridy = 8;
 		panelImage.add(image300Wx300H_3, gbc_image300Wx300H_3);
 
-		image96Wx96H_4 = new ImagePanel("96Wx96H_4", 0);
+		image96Wx96H_4 = new ImagePanel("96Wx96H_4", variantNumber);
 		GridBagLayout gbl_image96Wx96H_4 = (GridBagLayout) image96Wx96H_4
 				.getLayout();
 		gbl_image96Wx96H_4.rowWeights = new double[] { 0.0 };
@@ -765,7 +765,7 @@ public class VariantPanel extends JPanel implements HasVisiableRule,
 		image96Wx96H_4.setTextRuleSource(MessageFormat.format("@VARIANT_{0}_LIST_FILE@", variantNumber));
 		image96Wx96H_4.setTextRuleScript(new String[] {
 				"(?sm).*^(.*(?:104x104_4)\\.png)?$.*", "$1" });
-		image96Wx96H_4.setReference(new String[] { "btnVariant0UpdateImage" });
+		image96Wx96H_4.setReference(new String[] { MessageFormat.format("btnVariant{0}UpdateImage", variantNumber) });
 		image96Wx96H_4.setName("image96Wx96H_4");
 		GridBagConstraints gbc_image96Wx96H_4 = new GridBagConstraints();
 		gbc_image96Wx96H_4.insets = new Insets(0, 0, 5, 5);
@@ -774,7 +774,7 @@ public class VariantPanel extends JPanel implements HasVisiableRule,
 		gbc_image96Wx96H_4.gridy = 9;
 		panelImage.add(image96Wx96H_4, gbc_image96Wx96H_4);
 
-		image300Wx300H_4 = new ImagePanel("300Wx300H_4", 0);
+		image300Wx300H_4 = new ImagePanel("300Wx300H_4", variantNumber);
 		GridBagLayout gbl_image300Wx300H_4 = (GridBagLayout) image300Wx300H_4
 				.getLayout();
 		gbl_image300Wx300H_4.rowWeights = new double[] { 0.0 };
@@ -787,7 +787,7 @@ public class VariantPanel extends JPanel implements HasVisiableRule,
 						"(?sm).*^(.*(?:480x316|359x485|300x465|392x343|472x263|290x283)_4\\.png)?$.*",
 						"$1" });
 		image300Wx300H_4
-				.setReference(new String[] { "btnVariant0UpdateImage" });
+				.setReference(new String[] { MessageFormat.format("btnVariant{0}UpdateImage", variantNumber) });
 		image300Wx300H_4.setName("image300Wx300H_4");
 		GridBagConstraints gbc_image300Wx300H_4 = new GridBagConstraints();
 		gbc_image300Wx300H_4.insets = new Insets(0, 0, 5, 0);
@@ -796,7 +796,7 @@ public class VariantPanel extends JPanel implements HasVisiableRule,
 		gbc_image300Wx300H_4.gridy = 9;
 		panelImage.add(image300Wx300H_4, gbc_image300Wx300H_4);
 
-		image96Wx96H_5 = new ImagePanel("96Wx96H_5", 0);
+		image96Wx96H_5 = new ImagePanel("96Wx96H_5", variantNumber);
 		GridBagLayout gbl_image96Wx96H_5 = (GridBagLayout) image96Wx96H_5
 				.getLayout();
 		gbl_image96Wx96H_5.rowWeights = new double[] { 0.0 };
@@ -806,7 +806,7 @@ public class VariantPanel extends JPanel implements HasVisiableRule,
 		image96Wx96H_5.setTextRuleSource(MessageFormat.format("@VARIANT_{0}_LIST_FILE@", variantNumber));
 		image96Wx96H_5.setTextRuleScript(new String[] {
 				"(?sm).*^(.*(?:104x104_5)\\.png)?$.*", "$1" });
-		image96Wx96H_5.setReference(new String[] { "btnVariant0UpdateImage" });
+		image96Wx96H_5.setReference(new String[] { MessageFormat.format("btnVariant{0}UpdateImage", variantNumber) });
 		image96Wx96H_5.setName("image96Wx96H_5");
 		GridBagConstraints gbc_image96Wx96H_5 = new GridBagConstraints();
 		gbc_image96Wx96H_5.insets = new Insets(0, 0, 5, 5);
@@ -815,7 +815,7 @@ public class VariantPanel extends JPanel implements HasVisiableRule,
 		gbc_image96Wx96H_5.gridy = 10;
 		panelImage.add(image96Wx96H_5, gbc_image96Wx96H_5);
 
-		image300Wx300H_5 = new ImagePanel("300Wx300H_5", 0);
+		image300Wx300H_5 = new ImagePanel("300Wx300H_5", variantNumber);
 		GridBagLayout gbl_image300Wx300H_5 = (GridBagLayout) image300Wx300H_5
 				.getLayout();
 		gbl_image300Wx300H_5.rowWeights = new double[] { 0.0 };
@@ -828,7 +828,7 @@ public class VariantPanel extends JPanel implements HasVisiableRule,
 						"(?sm).*^(.*(?:480x316|359x485|300x465|392x343|472x263|290x283)_5\\.png)?$.*",
 						"$1" });
 		image300Wx300H_5
-				.setReference(new String[] { "btnVariant0UpdateImage" });
+				.setReference(new String[] { MessageFormat.format("btnVariant{0}UpdateImage", variantNumber) });
 		image300Wx300H_5.setName("image300Wx300H_5");
 		GridBagConstraints gbc_image300Wx300H_5 = new GridBagConstraints();
 		gbc_image300Wx300H_5.insets = new Insets(0, 0, 5, 0);
@@ -837,7 +837,7 @@ public class VariantPanel extends JPanel implements HasVisiableRule,
 		gbc_image300Wx300H_5.gridy = 10;
 		panelImage.add(image300Wx300H_5, gbc_image300Wx300H_5);
 
-		image96Wx96H_6 = new ImagePanel("96Wx96H_6", 0);
+		image96Wx96H_6 = new ImagePanel("96Wx96H_6", variantNumber);
 		GridBagLayout gbl_image96Wx96H_6 = (GridBagLayout) image96Wx96H_6
 				.getLayout();
 		gbl_image96Wx96H_6.rowWeights = new double[] { 0.0 };
@@ -847,7 +847,7 @@ public class VariantPanel extends JPanel implements HasVisiableRule,
 		image96Wx96H_6.setTextRuleSource(MessageFormat.format("@VARIANT_{0}_LIST_FILE@", variantNumber));
 		image96Wx96H_6.setTextRuleScript(new String[] {
 				"(?sm).*^(.*(?:104x104_6)\\.png)?$.*", "$1" });
-		image96Wx96H_6.setReference(new String[] { "btnVariant0UpdateImage" });
+		image96Wx96H_6.setReference(new String[] { MessageFormat.format("btnVariant{0}UpdateImage", variantNumber) });
 		image96Wx96H_6.setName("image96Wx96H_6");
 		GridBagConstraints gbc_image96Wx96H_6 = new GridBagConstraints();
 		gbc_image96Wx96H_6.insets = new Insets(0, 0, 5, 5);
@@ -856,7 +856,7 @@ public class VariantPanel extends JPanel implements HasVisiableRule,
 		gbc_image96Wx96H_6.gridy = 11;
 		panelImage.add(image96Wx96H_6, gbc_image96Wx96H_6);
 
-		image300Wx300H_6 = new ImagePanel("300Wx300H_6", 0);
+		image300Wx300H_6 = new ImagePanel("300Wx300H_6", variantNumber);
 		GridBagLayout gbl_image300Wx300H_6 = (GridBagLayout) image300Wx300H_6
 				.getLayout();
 		gbl_image300Wx300H_6.rowWeights = new double[] { 0.0 };
@@ -869,7 +869,7 @@ public class VariantPanel extends JPanel implements HasVisiableRule,
 						"(?sm).*^(.*(?:480x316|359x485|300x465|392x343|472x263|290x283)_6\\.png)?$.*",
 						"$1" });
 		image300Wx300H_6
-				.setReference(new String[] { "btnVariant0UpdateImage" });
+				.setReference(new String[] { MessageFormat.format("btnVariant{0}UpdateImage", variantNumber) });
 		image300Wx300H_6.setName("image300Wx300H_6");
 		GridBagConstraints gbc_image300Wx300H_6 = new GridBagConstraints();
 		gbc_image300Wx300H_6.insets = new Insets(0, 0, 5, 0);
@@ -878,7 +878,7 @@ public class VariantPanel extends JPanel implements HasVisiableRule,
 		gbc_image300Wx300H_6.gridy = 11;
 		panelImage.add(image300Wx300H_6, gbc_image300Wx300H_6);
 
-		image96Wx96H_7 = new ImagePanel("96Wx96H_7", 0);
+		image96Wx96H_7 = new ImagePanel("96Wx96H_7", variantNumber);
 		GridBagLayout gbl_image96Wx96H_7 = (GridBagLayout) image96Wx96H_7
 				.getLayout();
 		gbl_image96Wx96H_7.rowWeights = new double[] { 0.0 };
@@ -888,7 +888,7 @@ public class VariantPanel extends JPanel implements HasVisiableRule,
 		image96Wx96H_7.setTextRuleSource(MessageFormat.format("@VARIANT_{0}_LIST_FILE@", variantNumber));
 		image96Wx96H_7.setTextRuleScript(new String[] {
 				"(?sm).*^(.*(?:104x104_7)\\.png)?$.*", "$1" });
-		image96Wx96H_7.setReference(new String[] { "btnVariant0UpdateImage" });
+		image96Wx96H_7.setReference(new String[] { MessageFormat.format("btnVariant{0}UpdateImage", variantNumber) });
 		image96Wx96H_7.setName("image96Wx96H_7");
 		GridBagConstraints gbc_image96Wx96H_7 = new GridBagConstraints();
 		gbc_image96Wx96H_7.insets = new Insets(0, 0, 5, 5);
@@ -897,7 +897,7 @@ public class VariantPanel extends JPanel implements HasVisiableRule,
 		gbc_image96Wx96H_7.gridy = 12;
 		panelImage.add(image96Wx96H_7, gbc_image96Wx96H_7);
 
-		image300Wx300H_7 = new ImagePanel("300Wx300H_7", 0);
+		image300Wx300H_7 = new ImagePanel("300Wx300H_7", variantNumber);
 		GridBagLayout gbl_image300Wx300H_7 = (GridBagLayout) image300Wx300H_7
 				.getLayout();
 		gbl_image300Wx300H_7.rowWeights = new double[] { 0.0 };
@@ -910,7 +910,7 @@ public class VariantPanel extends JPanel implements HasVisiableRule,
 						"(?sm).*^(.*(?:480x316|359x485|300x465|392x343|472x263|290x283)_7\\.png)?$.*",
 						"$1" });
 		image300Wx300H_7
-				.setReference(new String[] { "btnVariant0UpdateImage" });
+				.setReference(new String[] { MessageFormat.format("btnVariant{0}UpdateImage", variantNumber) });
 		image300Wx300H_7.setName("image300Wx300H_7");
 		GridBagConstraints gbc_image300Wx300H_7 = new GridBagConstraints();
 		gbc_image300Wx300H_7.insets = new Insets(0, 0, 5, 0);
@@ -919,7 +919,7 @@ public class VariantPanel extends JPanel implements HasVisiableRule,
 		gbc_image300Wx300H_7.gridy = 12;
 		panelImage.add(image300Wx300H_7, gbc_image300Wx300H_7);
 
-		image96Wx96H_8 = new ImagePanel("96Wx96H_8", 0);
+		image96Wx96H_8 = new ImagePanel("96Wx96H_8", variantNumber);
 		GridBagLayout gbl_image96Wx96H_8 = (GridBagLayout) image96Wx96H_8
 				.getLayout();
 		gbl_image96Wx96H_8.rowWeights = new double[] { 0.0 };
@@ -929,7 +929,7 @@ public class VariantPanel extends JPanel implements HasVisiableRule,
 		image96Wx96H_8.setTextRuleSource(MessageFormat.format("@VARIANT_{0}_LIST_FILE@", variantNumber));
 		image96Wx96H_8.setTextRuleScript(new String[] {
 				"(?sm).*^(.*(?:104x104_8)\\.png)?$.*", "$1" });
-		image96Wx96H_8.setReference(new String[] { "btnVariant0UpdateImage" });
+		image96Wx96H_8.setReference(new String[] { MessageFormat.format("btnVariant{0}UpdateImage", variantNumber) });
 		image96Wx96H_8.setName("image96Wx96H_8");
 		GridBagConstraints gbc_image96Wx96H_8 = new GridBagConstraints();
 		gbc_image96Wx96H_8.insets = new Insets(0, 0, 5, 5);
@@ -938,7 +938,7 @@ public class VariantPanel extends JPanel implements HasVisiableRule,
 		gbc_image96Wx96H_8.gridy = 13;
 		panelImage.add(image96Wx96H_8, gbc_image96Wx96H_8);
 
-		image300Wx300H_8 = new ImagePanel("300Wx300H_8", 0);
+		image300Wx300H_8 = new ImagePanel("300Wx300H_8", variantNumber);
 		GridBagLayout gbl_image300Wx300H_8 = (GridBagLayout) image300Wx300H_8
 				.getLayout();
 		gbl_image300Wx300H_8.rowWeights = new double[] { 0.0 };
@@ -951,7 +951,7 @@ public class VariantPanel extends JPanel implements HasVisiableRule,
 						"(?sm).*^(.*(?:480x316|359x485|300x465|392x343|472x263|290x283)_8\\.png)?$.*",
 						"$1" });
 		image300Wx300H_8
-				.setReference(new String[] { "btnVariant0UpdateImage" });
+				.setReference(new String[] { MessageFormat.format("btnVariant{0}UpdateImage", variantNumber) });
 		image300Wx300H_8.setName("image300Wx300H_8");
 		GridBagConstraints gbc_image300Wx300H_8 = new GridBagConstraints();
 		gbc_image300Wx300H_8.insets = new Insets(0, 0, 5, 0);
