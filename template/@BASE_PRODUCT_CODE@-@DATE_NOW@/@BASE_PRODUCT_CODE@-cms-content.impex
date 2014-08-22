@@ -1,0 +1,34 @@
+$version=Staged
+
+$contentCatalog=msscnContentCatalog
+$productCatalog=msscnProductCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=$version])[default=$contentCatalog:$version]
+$productCV=catalogversion(catalog(id[default=$productCatalog]),version[default='$version'])[unique=true,default=$productCatalog:$version]
+# These define sets of components that can fit into similar slots
+$wideContent=CMSImageComponent,SimpleBannerComponent,BannerComponent,ImageMapComponent,RotatingImagesComponent,ProductCarouselComponent,CMSParagraphComponent,CMSIconLinkComponent
+$narrowContent=ProductFeatureComponent,CategoryFeatureComponent,CMSImageComponent,SimpleBannerComponent,BannerComponent,ImageMapComponent,RotatingImagesComponent,ProductCarouselComponent,CMSParagraphComponent,CMSIconLinkComponent
+$footerContent=CMSLinkComponent,CMSParagraphComponent,FooterComponent,CMSIconLinkComponent
+
+$productPageTemplate=GeneralProduct_DetailsPageTemplate
+$mobile-productPageTemplate=MobileProductDetailsPageTemplate
+$baseProductCode=@BASE_PRODUCT_CODE@
+
+########################################################################################################################################################################################
+# Product Details Page
+INSERT_UPDATE ProductPage;$contentCV[unique=true];uid[unique=true]        ;name                              ;masterTemplate(uid,$contentCV);defaultPage;approvalStatus(code)[default='approved'];onlyOneRestrictionMustApply[default='false'];restrictions(uid,$contentCV)
+                         ;                       ;$baseProductCode        ;Product Base For $baseProductCode ;$productPageTemplate          ;false      ;                                        ;                                            ;DesktopExperienceRestriction
+                         ;                       ;mobile-$baseProductCode ;Product Base For $baseProductCode ;$mobile-productPageTemplate   ;false      ;                                        ;                                            ;MobileExperienceRestriction
+
+########################################################################################################################################
+########################################################################################################################################
+INSERT_UPDATE CMSParagraphComponent ;$contentCV[unique=true];uid[unique=true]       ;restrictions(uid,$contentCV)
+									;                       ;$baseProductCode       ;
+									;                       ;mobile-$baseProductCode;
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true]                  ;name                     ;active  ;cmsComponents(uid,$contentCV)
+                         ;                       ;$baseProductCode_Section4         ;$baseProductCode Section4;true    ;$baseProductCode
+                         ;                       ;mobile-$baseProductCode_Section4  ;$baseProductCode Section4;true    ;mobile-$baseProductCode
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true]                ;position[unique=true];page(uid,$contentCV)[unique=true];contentSlot(uid,$contentCV)[unique=true]
+                                ;                       ;$baseProductCode_Section4       ;Section4             ;$baseProductCode                 ;$baseProductCode_Section4
+                                ;                       ;mobile-$baseProductCode_Section4;Section4             ;mobile-$baseProductCode          ;mobile-$baseProductCode_Section4

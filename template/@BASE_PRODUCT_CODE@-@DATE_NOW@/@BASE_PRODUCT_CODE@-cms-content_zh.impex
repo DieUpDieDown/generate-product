@@ -1,0 +1,33 @@
+$version=Staged
+# Macros / Replacement Parameter definitions
+$contentCatalog=msscnContentCatalog
+$contentCatalogName=Microsoft Content Catalog
+$productCatalog=msscnProductCatalog
+$productCatalogName=Microsoft Product Catalog
+$classificationCatalog=msscnClassification
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=$version])[default=$contentCatalog:$version]
+$picture=media(code, $contentCV);
+$siteResource=jar:com.microsoft.store.cn.initialdata.setup.InitialDataSystemSetup&/msscninitialdata/import/contentCatalogs/$contentCatalog
+
+# Import config properties into impex macros
+UPDATE GenericItem[processor=de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor];pk[unique=true];;
+
+# Load the storefront context root config param
+$P_THEME_RESOURCE_PATH=$config-impex.static.image.path
+# Language
+$lang=zh                                
+                   
+$baseProductCode=@BASE_PRODUCT_CODE@
+				   
+#################################################################
+##### UPDATE COMPONENT CONTENT
+#################################################################
+UPDATE CMSParagraphComponent ;$contentCV[unique=true];uid[unique=true]  ;restrictions(uid,$contentCV);content[lang=$lang]
+							 ;                       ;$baseProductCode  ;                            ;"
+@PRODUCT_DESCRIPTIONN@
+"
+							 
+UPDATE CMSParagraphComponent ;$contentCV[unique=true];uid[unique=true]          ;restrictions(uid,$contentCV);content[lang=$lang]
+							 ;                       ;mobile-$baseProductCode   ;                            ;"
+@PRODUCT_DESCRIPTIONN@
+"
